@@ -1,0 +1,200 @@
+@use "../utilities" as u;
+
+@include u.desktop {
+  .container-mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 70%;
+    padding: 40px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+    margin: 5% 4%; /* Puedes ajustar el margen según sea necesario */
+    margin-left:30%; /* Ajusta la cantidad de desplazamiento hacia la izquierda */
+  }
+  
+  
+  
+  /* Estilos para el contenedor principal */
+  .custom-marker {
+    width: 100px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  /* Estilos para la barra de búsqueda */
+  .form-mapa {
+    display: flex;
+    width: 30%;
+    
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    margin: -6% 31%;
+    margin-bottom: 10px;
+  }
+  
+  .form-mapa input[type=text] {
+    width: auto;
+    border: 1px solid rgb(21, 22, 68);
+    margin: -19% auto; // Ajusta la posición vertical a -21% y centra horizontalmente
+    @include u.text(u.$font-family-montserrat, 1rem);
+    
+    // Añade estas propiedades para centrar horizontal y verticalmente el input
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+
+.form-mapa button{
+
+    @include u.btn( #4caf50,41%,20px);
+    @include u.text(u.$font-family-montserrat,10px)
+}
+  .search-results{
+    width: auto;
+  }
+
+
+  
+
+  /* Estilos para las opciones de autocompletado */
+  #autocomplete-options {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    background-color: rgb(250, 247, 247);
+    z-index: 1;
+    width: 100%;
+    bottom: 100%;  // Muestra las opciones arriba del input 
+    left: 0;    // Alinea las opciones con el borde izquierdo del input 
+    display: flexbox;  // Oculta inicialmente las opciones 
+  }
+  
+
+  #autocomplete-options div {
+    padding: 8px;
+    position: static;
+    cursor: pointer;
+  }
+
+  #autocomplete-options div:hover {
+    background-color: #f1f1f1;
+  }
+
+ 
+
+  #search-results ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Estilos para el mapa */
+  #map {
+    z-index: 1; /* Asegura que el mapa esté detrás de las opciones de autocompletado */
+  }
+}
+
+.mapaContainer {
+  display: flex;
+}
+
+.filtroContainer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-width: 200px;
+  box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapContainer {
+  position: relative;
+  flex: 1;
+}
+
+// mapa.scss
+
+// mapa.scss
+
+// Estilos para el contenedor del mapa
+.map-container {
+  display: flex;
+}
+
+#filter-form {
+  margin-right: 20px;
+  width: 10%; // Ajusta el ancho para pantallas más pequeñas
+  padding: 40px 20px; // Ajusta los espaciados para pantallas más pequeñas
+  height: inherit;
+  background: u.$background-color-white;
+  box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: black;
+  .genero-options,
+  .edad-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .toggleButton {
+      cursor: pointer;
+    }
+
+    label {
+      margin-top: 5px;
+    }
+  }
+
+  button {
+    margin-top: 3%;
+    cursor: pointer;
+    background-color: #283e4d;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+
+    border-radius: 4px;
+  }
+
+  // Ajustes para centrar el formulario y centrar el texto
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Puedes ajustar esto según sea necesario para centrarlo a la izquierda
+  text-align:justify; 
+
+  // Ajustes para la posición del formulario
+  position: fixed;
+  top: 50%;
+  left: 10%; // Puedes ajustar esto para mover el formulario hacia la izquierda
+  transform: translateY(-50%);
+}
+
+
+// Estilos para el contenedor del mapa y resultados de búsqueda
+.container-mapa {
+  display: flex;
+  flex-direction: column;
+
+  // Estilos para el mapa
+  #map {
+    height: 400px;
+    width: 740px;
+  }
+}
+
+// Estilos para el formulario de búsqueda y resultados de búsqueda
+.form-mapa,
+#search-results {
+  margin-bottom: 20px;
+}

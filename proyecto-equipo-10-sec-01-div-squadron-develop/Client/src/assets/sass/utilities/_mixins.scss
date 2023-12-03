@@ -1,0 +1,453 @@
+@use "variables" as v;
+
+@mixin image-logo(){
+
+    width: 90px;
+    height: 70px;
+}
+
+
+
+
+//el texto del header(la navegacion)
+@mixin text-nav($color: v.$color-text-nav,$font-size:v.$font-size-text-nav,$font-style: v.$font-style-normal,$list-style-type:v.$list-style-type-nav)
+{
+    color: $color;
+    font-family:v.$font-family-roboto;
+    font-size: $font-size;
+    font-style: $font-style;
+    letter-spacing: 4px;
+    font-weight: 600;
+    list-style-type: $list-style-type;
+}
+
+
+//el contene
+@mixin container($display: v.$display-flex,$justify-content:v.$justify-content-center,$align-items:v.$align-items-center,$background: #fff){
+    display: $display;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    background-color: $background;
+    box-shadow: 0px 0px 15px 11px rgba(0,0,0,0.1);
+    
+}
+@mixin container-form-general($display: v.$display-flex,$background: #fff){
+    display: $display;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: last baseline;
+    background-color: $background;
+    box-shadow: 0px 0px 15px 11px rgba(0,0,0,0.1);
+}
+
+@mixin size-icon($width:20px,$height:20px){
+    width: $width;
+    height: $height;
+}
+@mixin btn($backgroud:#FFC3AA, $width:200px,$height:100px,$padding: 18px 32px,$gap:10px,$border-radius:10px){
+        display: v.$display-flex;
+        border: v.$border-none;
+        width: $width;
+        cursor: v.$cursor-pointer;
+        padding: $padding;
+        justify-content: v.$justify-content-center;
+        align-items: v.$align-items-center;
+        gap: $gap;
+        color:white;
+        border-radius: 10px;
+        background: $backgroud;
+        text-align: v.$text-align-center;
+      font-family: 'Montserrat';
+      font-size: 24px;
+      text-decoration: none;
+}
+
+@mixin text($font-family:'Roboto',$font-size: 0px, $letter-spacing:0px,$font-weight:0){
+        font-family: $font-family;
+        font-size: $font-size;
+        letter-spacing: $letter-spacing;
+        font-weight: $font-weight;
+        text-align: justify;
+      
+}
+
+@mixin text-wizard($font-family:v.$font-family-roboto,$font-size: 0px, $letter-spacing:0px,$font-weight:0){
+    font-family: $font-family;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+    text-align: center;
+}
+
+
+
+@mixin text-dropdown($font-family:'montserrat',$font-size: 0px, $letter-spacing:0px,$font-weight:0){
+    font-family: $font-family;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+  
+  
+}
+
+@mixin container-step-form($position-absolute:none,$width:0%){
+    content: "";
+    position: $position-absolute;
+    height: 100%; 
+    width: $width;
+    border-radius: 10px 0px 0px 10px;
+    top: 0;
+      text-align: center;
+    left: 0;
+}
+
+
+
+
+@mixin maxphone {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+
+@mixin min_maxTablet {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+
+@mixin desktop-max{
+    @media only screen and (min-width: 1025px)and (max-width:1400px){
+        @content
+    }
+}
+
+@mixin question-account{
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+@mixin form-crear-cuenta-input
+{
+    width:40%;
+    border: none;
+    height: 1.5rem;
+    border-radius: 5px;
+    margin: 20px 0px;
+    border-bottom: 1px solid gray;
+    font-family: 'monserat';
+    outline: none;
+}
+
+
+@mixin input-form{
+    display: flex;
+    flex-direction: column;
+  border: none;
+}
+
+
+@mixin table{
+     //tabla 
+        
+            //tabla
+            .container {
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                max-width: 800px;
+                margin: 0 auto;
+                margin-bottom: 100px;
+            
+            }
+            
+            .titulo {
+                text-align: center;
+            }
+            
+            .subtitulo {
+                text-align: center;
+            }
+            
+            .table_pendiente {
+                border: 1px solid rgba(0, 0, 0, 1);
+                margin: 0 30px;
+                padding: 20px;
+            }
+            
+            .pendiente {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            //cabecera de la tabla
+            .pendiente th {
+                font-size: 12pt;
+                text-align: center;
+                color: #131217;
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+            
+            //body de la tabla
+            .pendiente td {
+                font-size: 12pt;
+                color: 0000;
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+            
+            
+            .td .ordenar1,
+            .td .ordenar2 {
+                text-align: center;
+                display: inline-block;
+                margin:0 15px 0 0;
+            }
+            
+            
+            .color{
+                background-color:#9dd1ce;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .color_e{
+                background-color:#edcad2;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .color_a{
+                background-color:#91f299;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            button:active {
+                background-color: #131217; /* Cambia el color de fondo al hacer clic */
+                color: #fff; /* Cambia el color del texto al hacer clic */
+            }
+            
+            .buscador {
+                width: 42%;
+                top:-40px;
+                text-align: right;
+                float: right;
+                position: relative; /* Añade posición relativa al contenedor padre */
+                padding: 25px;
+            }
+            
+          
+            
+            .btn {
+                width: 0;
+                height: 40px;
+                padding: 0 20px;
+                float: right;
+                background: #ae34eb;
+                line-height: 40px;
+                border-radius: 20px;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.5s;
+                position: absolute; /* Añade posición absoluta al botón */
+                right: 0; /* Alinea a la derecha dentro del contenedor */
+            }
+            
+            .btn i {
+                font-size: 18px;
+                color: #ae34eb;
+                transition: all 0.7s ease;
+            }
+            
+}
+
+
+
+@mixin table-mobile{
+    @media (max-width: 768px) {
+
+         .pendiente th {
+            display: none;
+            
+        }
+        .pendiente td{
+            border: 1px solid rgba(0, 0, 0, 0.2);
+
+        }
+        
+     
+        
+
+        .pendiente ,.pendiente td, .pendiente tbody,.pendiente tr
+        {
+            display: block;
+            width: 100%;
+            font-size: 12px;
+
+        }
+        .pendiente tr{
+            margin: 0 0 1.4rem 0;
+        }
+
+        .pendiente tbody tr td{
+            text-align: right;
+            position: relative;
+        }
+
+       
+        .pendiente td::before {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+        
+
+        //esto es para que en la tabla mobile salga que es cada fila :D
+        @for $i from 1 through 1000 {
+            .pendiente tr:nth-child(#{$i}) td {
+                @for $j from 1 through 10 {
+                    &:nth-child(#{$j})::before {
+                        $customContent: ""; // variable para el contenido personalizado
+        
+                        @if $j == 1 {
+                            $customContent: "Nombre:";
+                        } @else if $j == 2 {
+                            $customContent: "Edad:";
+                        } @else if $j == 3 {
+                            $customContent: "Genero:";
+                        } 
+        
+                        content: $customContent;
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+
+
+@mixin table-tablet{
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+             //tabla
+             .container {
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                max-width: 800px;
+                margin: 0 auto;
+                margin-bottom: 100px;
+            
+            }
+            
+            .titulo {
+                text-align: center;
+            }
+            
+            .subtitulo {
+                text-align: center;
+            }
+            
+            .table_pendiente {
+                border: 1px solid rgba(0, 0, 0, 1);
+                margin: 0 30px;
+                padding: 20px;
+            }
+            
+            .pendiente {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            //cabecera de la tabla
+            .pendiente th {
+                font-size: 12pt;
+                text-align: center;
+                color: #131217;
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+            
+            //body de la tabla
+            .pendiente td {
+                font-size: 12pt;
+                color: 0000;
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+            
+            
+            .td .ordenar1,
+            .td .ordenar2 {
+                text-align: center;
+                display: inline-block;
+                margin:0 15px 0 0;
+            }
+            
+            
+            .color{
+                background-color:#9dd1ce;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .color_e{
+                background-color:#edcad2;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .color_a{
+                background-color:#91f299;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            button:active {
+                background-color: #131217; /* Cambia el color de fondo al hacer clic */
+                color: #fff; /* Cambia el color del texto al hacer clic */
+            }
+            
+            .buscador {
+                width: 42%;
+                top:-40px;
+                text-align: right;
+                float: right;
+                position: relative; /* Añade posición relativa al contenedor padre */
+                padding: 25px;
+            }
+            
+          
+            
+            .btn {
+                width: 0;
+                height: 40px;
+                padding: 0 20px;
+                float: right;
+                background: #ae34eb;
+                line-height: 40px;
+                border-radius: 20px;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.5s;
+                position: absolute; /* Añade posición absoluta al botón */
+                right: 0; /* Alinea a la derecha dentro del contenedor */
+            }
+            
+            .btn i {
+                font-size: 18px;
+                color: #ae34eb;
+                transition: all 0.7s ease;
+            }
+    }
+}

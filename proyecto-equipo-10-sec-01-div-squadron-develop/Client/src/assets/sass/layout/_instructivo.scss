@@ -1,0 +1,55 @@
+@use "../utilities" as u;
+
+.title {
+  @include u.text('Montserrat', u.$font-size-title, 0.4px, u.$font-weight-title);
+  text-align: u.$text-align-center;
+}
+
+.container-body-instructivo {
+  display: u.$display-flex;
+  width: 60%; // Ajusta el ancho para pantallas más pequeñas
+  padding: 40px 20px; // Ajusta los espaciados para pantallas más pequeñas
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  background: u.$background-color-white;
+  box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+  margin: 5% auto;
+
+
+  @include u.maxphone{
+    width:  70%; 
+    padding: 30px; 
+    
+  }
+
+  
+  @include u.min_maxTablet{
+    width: 70%; // Ajusta el ancho para pantallas más grandes (laptop, desktop)
+    padding: 40px; // Ajusta los espaciados para pantallas más grandes
+  }
+  }
+
+
+.text-instructivo {
+  @include u.text('Montserrat', 1.3rem, 0px, 400);
+  padding: 0 2%;
+  line-height: 40px;
+
+  @include u.maxphone{
+        @include u.text('Montserrat', 1rem, 1px, 400);
+
+  }
+  @include u.min_maxTablet{
+        @include u.text('Montserrat', 1.2rem, 1px, 400);
+
+  }
+
+
+  }
+
+
+
+
+ 
+

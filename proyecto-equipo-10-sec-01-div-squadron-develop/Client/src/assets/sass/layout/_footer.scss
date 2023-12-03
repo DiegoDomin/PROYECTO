@@ -1,0 +1,229 @@
+@use "../utilities/" as u;
+
+@include u.desktop {
+  /* Ajustes para el footer */
+  footer{
+    position: static;
+    bottom: 0;
+
+
+    width: 100%;
+    color: #fff;
+
+    background-color: #131217;
+
+    flex-direction: u.$flex-direction-column;
+    width: 100%;
+  
+  flex-wrap: wrap;
+
+  }
+
+  /* ... Otros estilos ... */
+ 
+  .title-footer {
+    text-align: center;
+  }
+
+  .contactos {
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas pequeñas */
+  }
+  .contactos div{
+    width: 20%;
+    align-items: end;
+  }
+
+  .contactos p {
+    text-align: center;
+  }
+   
+  .imgF {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+  .center {
+    text-align: center;
+  }
+
+  .container {
+    border-bottom: 1px solid #fff; /* Línea horizontal debajo de div container */
+    background-color: #131217;
+  }
+
+  .contactos {
+    border-bottom: 1px solid #fff; /*
+     Línea horizontal después del div contactos */
+     display: flex;
+     flex-direction: row;
+  }
+
+  .derechos {
+    text-align: center;
+  }
+
+  .redes_sociales {
+    display: flex; /* Utiliza flexbox para alinear las imágenes horizontalmente */
+    justify-content: center;
+    
+  }
+.redes_sociales img{
+    display: flex;
+    flex-direction: row;
+    @include u.size-icon(40px,40px);
+
+}
+}
+
+@include u.min_maxTablet{
+    footer{
+        position: static;
+        bottom: 0;
+    
+    
+        width: 100%;
+        color: #fff;
+    
+        background-color: #131217;
+    
+        flex-direction: u.$flex-direction-column;
+        width: 100%;
+      
+      flex-wrap: wrap;
+    
+      }
+    
+      /* ... Otros estilos ... */
+     
+      .title-footer {
+        text-align: center;
+      }
+    
+      .contactos {
+        display: flex;
+        justify-content:space-evenly;
+        flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas pequeñas */
+      }
+      .contactos div{
+        width: 20%;
+        align-items: end;
+      }
+    
+      .contactos p {
+        text-align: center;
+      }
+    
+    
+      .center {
+        text-align: center;
+      }
+    
+      .container {
+        border-bottom: 1px solid #fff; /* Línea horizontal debajo de div container */
+      }
+    
+      .contactos {
+        border-bottom: 1px solid #fff; /*
+         Línea horizontal después del div contactos */
+         display: flex;
+         flex-direction: row;
+      }
+    
+      .derechos {
+        text-align: center;
+      }
+    
+      .redes_sociales {
+        display: flex; /* Utiliza flexbox para alinear las imágenes horizontalmente */
+        justify-content: center;
+        
+      }
+    .redes_sociales img{
+        display: flex;
+        flex-direction: row;
+        @include u.size-icon(40px,40px);
+    
+    }
+}
+
+@include u.maxphone{
+    footer{
+        position: static;
+        bottom: 0;
+    display: flex;
+    
+        width: 100%;
+        color: #fff;
+    
+        background-color: #131217;
+    
+        flex-direction: u.$flex-direction-column;
+        width: 100%;
+      
+      flex-wrap: wrap;
+    
+      }
+    
+      /* ... Otros estilos ... */
+     
+      .title-footer {
+        text-align: center;
+      }
+    
+      .contactos {
+        display: flex;
+        justify-content:space-evenly;
+        flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas pequeñas */
+        
+      }
+      .contactos div{
+        width: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+    
+      .contactos p {
+        text-align: center;
+      }
+    
+    
+      .center {
+        text-align: center;
+      }
+    
+      .container {
+        border-bottom: 1px solid #fff; /* Línea horizontal debajo de div container */
+      }
+    
+      .contactos {
+        border-bottom: 1px solid #fff; /*
+         Línea horizontal después del div contactos */
+         display: flex;
+         flex-direction: wrap;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         text-align: center;
+      }
+    
+      .derechos {
+        text-align: center;
+      }
+    
+      .redes_sociales {
+        display: flex; /* Utiliza flexbox para alinear las imágenes horizontalmente */
+        justify-content: center;
+        
+      }
+    .redes_sociales img{
+        display: flex;
+        flex-direction: row;
+        @include u.size-icon(40px,40px);
+    
+    }
+}

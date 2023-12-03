@@ -1,0 +1,19 @@
+@use "../utilities/" as u;
+
+
+.form-iniciar-sesion{
+  margin: 2rem 3rem;
+}
+
+//son los inputs
+.form-iniciar-sesion input{
+  width:20%;
+  border: none ;
+  height: 1.5rem;
+  border-radius: 5px;
+  margin: 40px 0px;
+  border-bottom: 1px solid gray;
+  font-family: u.$font-family-montserrat;
+  outline: none;
+}
+

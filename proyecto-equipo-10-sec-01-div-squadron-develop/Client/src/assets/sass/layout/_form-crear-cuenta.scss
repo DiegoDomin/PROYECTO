@@ -1,0 +1,601 @@
+@use "../utilities/" as u;
+
+
+
+
+
+//animaciones de radito button
+
+input:checked + .radio-title{
+background-color: u.$background-circle-wizard-active;
+  box-shadow: 0 0 12px u.$background-circle-wizard-active;
+
+}
+
+input:hover + .radio-title{
+  
+  box-shadow: 0 0 12px u.$background-circle-wizard-active;
+}
+
+input:checked + .radio-title label{
+  padding: 20px;
+  color: white;
+}
+
+
+
+.input-form2{
+  @include u.input-form;
+ 
+
+}
+
+textarea{
+  resize: none;
+}
+
+
+
+.p-text-form-error{
+  font-family: u.$font-family-montserrat;
+  margin: -2px;
+  font-size: 12px;
+  color: red;
+  
+}
+
+
+
+//---------------------------------------------------DESKTOP--------------------------------------
+@include u.desktop{
+  //es la pregunta si ya tiene cuenta creada
+.question-account {
+ 
+  @include u.question-account;
+  @include u.text('Montserrat',1.2rem);    
+
+} 
+
+//el tipo de texto para el label
+.label-form{
+  font-family: u.$font-family-montserrat;
+}
+
+//cambiar diseño input
+.form-crear-cuenta input{
+  display: flex;
+  flex-wrap: wrap;
+  width:90%;
+  border: none;
+  height: 1.5rem;
+  border-radius: 5px;
+  margin: 20px 0px;
+  border-bottom: 1px solid gray;
+  font-family: 'monserat';
+  outline: none;
+
+
+
+}
+
+
+.input-form-datos-personales-crear-cuenta{
+  margin: 4rem -50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+border: none;
+}
+
+.input-form-datos-personales-crear-cuenta textarea{
+  width: 100%;
+  margin: 0 -5px;
+}
+
+
+.input-form-datos-personales-crear-cuenta input{
+  width: 70%
+}
+
+.question-account {
+  
+  margin: 0 5%;
+  @include u.text('Montserrat',1.2rem);    
+
+} 
+
+.icon-account {
+ @include u.size-icon(100px, 100px);
+
+}
+
+
+.input-form{
+  @include u.input-form;
+
+}
+
+//respecto al genero
+
+.genero-form{
+  display: u.$display-flex;
+  
+  justify-content: u.$justify-content-center;
+}
+
+// contenedor del radio btton
+.radio-title{
+  display: u.$display-flex;
+  flex-direction: u.$flex-direction-column;
+  align-items: u.$align-items-center;
+  justify-content: center;
+  height: 50px;
+  width: 40px;
+  padding: 30px;
+  transition: all 300ms ease;
+  
+}
+.input-container{
+  position: u.$position-relative;
+  margin: 1rem;
+
+}
+
+//contenedor de ada input del radio button
+.input-container input{
+  position:u.$position-abosulte;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  
+}
+
+
+//tamaño de los iconos del radio button
+.icon-genero{
+  @include u.size-icon(40px,40px)
+}
+
+//log de mirame
+.logo-form{
+@include u.size-icon(80px,70px);
+  
+}
+
+
+.form-crear-cuenta-correo-contra input[type='text']{
+  width:40%;
+
+}
+
+.icon-eye-password{
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  margin: 1% 0 0 40%;
+}
+.container-password{
+  display: flex;
+}
+}
+
+
+
+
+@include u.desktop-max{
+    //es la pregunta si ya tiene cuenta creada
+.question-account {
+ 
+  @include u.question-account;
+  @include u.text('Montserrat',1.2rem);    
+
+}
+
+//el tipo de texto para el label
+.label-form{
+  font-family: u.$font-family-montserrat;
+}
+
+
+//cambiar diseño input
+.form-crear-cuenta input{
+  display: flex;
+  flex-wrap: wrap;
+  width:90%;
+  border: none;
+
+  height: 1.5rem;
+  border-radius: 5px;
+  margin: 20px 0;
+  border-bottom: 1px solid gray;
+  font-family: 'monserat';
+  outline: none;
+
+
+}
+
+.icon-account {
+ @include u.size-icon(100px, 100px);
+
+}
+
+
+.input-form{
+  @include u.input-form;
+
+}
+
+//respecto al genero
+
+.genero-form{
+  display: u.$display-flex;
+  
+  justify-content: u.$justify-content-center;
+}
+
+// contenedor del radio btton
+.radio-title{
+  display: u.$display-flex;
+  flex-direction: u.$flex-direction-column;
+  align-items: u.$align-items-center;
+  justify-content: center;
+  height: 50px;
+  width: 40px;
+  padding: 30px;
+  transition: all 300ms ease;
+  
+}
+.input-container{
+  position: u.$position-relative;
+  margin: 1rem;
+
+}
+
+//contenedor de ada input del radio button
+.input-container input{
+  position:u.$position-abosulte;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  
+}
+
+
+//tamaño de los iconos del radio button
+.icon-genero{
+  @include u.size-icon(40px,40px)
+}
+
+//log de mirame
+.logo-form{
+@include u.size-icon(80px,70px);
+  
+}
+
+
+.form-crear-cuenta-correo-contra input[type='text']{
+  width:40%;
+
+}
+
+.icon-eye-password{
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  margin: 1% 0 0 40%;
+}
+.container-password{
+  display: flex;
+}
+}
+
+
+//-------------------------------------------------------TELEFONO------------------------------
+@include u.maxphone{
+  .form-crear-cuenta{
+    width:75%;
+        border: u.$border-none ;
+        height: 1rem;
+        border-radius: 5px;
+        margin: 15px 0px;
+        border-bottom: 1px solid gray;
+        font-family: u.$font-family-montserrat;
+        outline: none;
+  }
+  .icon-account {
+  @include u.size-icon(30px, 30px);
+}
+.input-form{
+  margin: 20px auto;
+  width: 80%;
+  
+
+}
+
+
+.input-form-discapacidad{
+  margin: 2rem auto;
+  width: 80%;
+}
+
+
+//es la pregunta si ya tiene cuenta
+.question-account {
+  padding: 30px 0;
+  margin:  3%;
+  align-items: center;
+  @include u.text('Montserrat',0.7rem);    
+
+}
+
+.genero-form{
+  display: u.$display-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: u.$justify-content-center;
+  align-items: center;
+
+}
+
+// contenedor del radio btton
+.radio-title{
+  display: u.$display-flex;
+  flex-direction: u.$flex-direction-column;
+  align-items: u.$align-items-center;
+  justify-content: center;
+  height: 50px;
+  width: 40px;
+  padding: 30px;
+  transition: all 300ms ease;
+  
+}
+.input-container{
+  position: u.$position-relative;
+  margin: 1rem;
+
+}
+
+//contenedor de ada input del radio button
+.form-crear-cuenta input{
+  width:100%;
+  border: none;
+  height: 1.5rem;
+  border-radius: 5px;
+  margin: 20px 0px;
+  border-bottom: 1px solid gray;
+  font-family: 'monserat';
+  outline: none;
+
+}
+
+//tamaño de los iconos del radio button
+
+
+//log de mirame
+.logo-form{
+@include u.size-icon(80px,70px);
+  
+}
+
+
+.form-crear-cuenta-correo-contra input[type='text']{
+  width:40%;
+
+}
+
+.genero-form{
+  display: u.$display-flex;
+  
+  justify-content: u.$justify-content-center;
+}
+
+// contenedor del radio btton
+.radio-title{
+  display: u.$display-flex;
+  flex-direction: u.$flex-direction-column;
+  align-items: u.$align-items-center;
+  justify-content: center;
+  height: 50px;
+  width: 40px;
+  padding: 30px;
+  transition: all 300ms ease;
+  
+}
+.input-container{
+  position: u.$position-relative;
+  margin: 1rem;
+
+}
+
+//contenedor de ada input del radio button
+.input-container input{
+  position:u.$position-abosulte;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  
+}
+
+
+//tamaño de los iconos del radio button
+.icon-genero{
+  @include u.size-icon(40px,40px)
+
+}
+
+.icon-eye-password{
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  margin: 4% 0 0 50%;
+}
+.container-password{
+  display: flex;
+}
+
+
+
+}
+
+
+
+//-------------------------------------------------------tablet-----------------------------------
+@include u.min_maxTablet{
+  .form-crear-cuenta{
+    width:100%;
+    flex-wrap: wrap;
+
+        border: u.$border-none ;
+        height: 1rem;
+        border-radius: 5px;
+        margin: 15px 0px;
+        border-bottom: 1px solid gray;
+        font-family: u.$font-family-montserrat;
+        outline: none;
+  }
+  .icon-account {
+  @include u.size-icon(50px, 50px);
+}
+
+
+.input-form{
+  margin:  auto;
+  width: 80%;
+  
+
+}
+
+//es la pregunta si ya tiene cuenta
+.question-account {
+  padding: 20px 0;
+  margin: 0 17%;
+  @include u.text('Montserrat',1rem);    
+
+}
+
+
+
+
+
+.genero-form{
+  display: u.$display-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: u.$justify-content-center;
+  align-items: center;
+
+}
+
+// contenedor del radio btton
+.radio-title{
+  display: u.$display-flex;
+  flex-direction: u.$flex-direction-column;
+  align-items: u.$align-items-center;
+  justify-content: center;
+  height: 50px;
+  width: 40px;
+  padding: 30px;
+  transition: all 300ms ease;
+  
+}
+.input-container{
+  position: u.$position-relative;
+  margin: 1rem;
+
+}
+
+//contenedor de ada input del radio button
+.form-crear-cuenta input{
+  width:100%;
+  border: none;
+  height: 1.5rem;
+  border-radius: 5px;
+  margin: 20px 0px;
+  border-bottom: 1px solid gray;
+  font-family: 'monserat';
+  outline: none;
+
+}
+
+//contenedor de ada input del radio button
+
+//tamaño de los iconos del radio button
+.icon-genero{
+  @include u.size-icon(40px,40px)
+}
+
+//log de mirame
+.logo-form{
+@include u.size-icon(80px,70px);
+  
+}
+
+
+.form-crear-cuenta-correo-contra input[type='text']{
+  width:40%;
+
+}
+
+.genero-form{
+  display: u.$display-flex;
+  
+  justify-content: u.$justify-content-center;
+}
+
+// contenedor del radio btton
+.radio-title{
+  display: u.$display-flex;
+  flex-direction: u.$flex-direction-column;
+  align-items: u.$align-items-center;
+  justify-content: center;
+  height: 50px;
+  width: 40px;
+  padding: 30px;
+  transition: all 300ms ease;
+  
+}
+.input-container{
+  position: u.$position-relative;
+  margin: 1rem;
+
+}
+
+//contenedor de ada input del radio button
+.input-container input{
+  position:u.$position-abosulte;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  
+}
+
+
+//tamaño de los iconos del radio button
+.icon-genero{
+  @include u.size-icon(40px,40px)
+}
+.icon-eye-password{
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  margin: 3% 0 0 75%;
+}
+.container-password{
+  display: flex;
+}
+}
+
+
+

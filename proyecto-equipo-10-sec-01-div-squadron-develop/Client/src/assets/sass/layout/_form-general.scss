@@ -1,0 +1,408 @@
+@use "../utilities/" as u;
+
+
+
+
+
+//----------------------------------------------------DESKTOP_----------------
+@include u.desktop{
+
+//el contenedor general es para los formularios la cual es donde contiene los inputs y los pasos
+.container-form-general {
+
+  @include u.container-form-general();
+  position: u.$position-relative;
+  width: 70%;
+  flex-direction: u.$flex-direction-column;
+  border-radius: 10px;
+  background: u.$background-color-white;
+  margin: auto;
+  padding: 10px;
+
+flex-wrap: wrap;
+
+}
+
+//el contenedor de los pasos, su descripcion(TODO que esta en la izquierda de los formularios)
+.container-text-Description {
+
+  display: flex;
+  flex-wrap: wrap;
+  content: "";
+  position: absolute;
+  height: 100%; 
+  width: 45%;
+  border-radius: 10px 0px 0px 10px;
+  top: 0;
+    text-align: center;
+  left: 0;}
+//contenedor del paso y de la descripcion 
+.text-paso-y-decripcion {
+  padding: 10px;
+  align-items: center;
+ 
+}
+
+//titulo de Crear cuenta( el titulo de lo que esta en la izquierda de los formularios)
+.title-form {
+  font-size: 2rem;
+  font-family: u.$font-family-montserrat;
+
+}
+
+//texto del paso 1,paso2,etc....
+.text-title-form {
+  text-align: u.$text-align-center;
+  font-size: 1rem;
+  font-family: u.$font-family-montserrat;
+
+
+}
+
+//texto de la descripcion del parrafo
+.text-p-form {
+  width: 100%;
+  @include u.text("montserrat", 1rem, 1px, 400);
+  text-align: justify;
+  height: 100%;
+
+
+}
+
+//contenedor de los botones regresar y siguiente
+.buttons {
+  margin: 2rem 0;
+  display: u.$display-flex;
+
+}
+
+//separacion de los botones
+.buttons button {
+  margin: 0 2rem; 
+}
+
+
+
+//es el titulo del propio formulario(lado derecho del formulario)
+.text-title-form-inputs{
+    @include u.text(u.$font-family-montserrat,18px,0,600)
+}
+
+
+//contenedor del crear cuenta y perfil
+.container-title-photo-form{
+  justify-content: u.$justify-content-center;
+  align-items: u.$justify-content-center;
+    margin: 5rem;
+}
+
+  
+}
+
+
+@include u.desktop-max{
+  .container-form-general {
+  
+    @include u.container-form-general();
+    position: u.$position-relative;
+    width: 90%;
+    flex-direction: u.$flex-direction-column;
+    border-radius: 10px;
+    background: u.$background-color-white;
+    margin: auto;
+    padding: 10px;
+  
+  flex-wrap: wrap;
+  
+  }
+  
+  //el contenedor de los pasos, su descripcion(TODO que esta en la izquierda de los formularios)
+  .container-text-Description {
+  
+    display: flex;
+    flex-wrap: wrap;
+    content: "";
+    position: absolute;
+    height: 100%; 
+    width: 40%;
+    border-radius: 10px 0px 0px 10px;
+    top: 0;
+      text-align: center;
+    left: 0;}
+  //contenedor del paso y de la descripcion 
+  .text-paso-y-decripcion {
+    padding: 10px;
+    align-items: center;
+   
+  }
+  
+  //titulo de Crear cuenta( el titulo de lo que esta en la izquierda de los formularios)
+  .title-form {
+    font-size: 2rem;
+    font-family: u.$font-family-montserrat;
+  
+  }
+  
+  //texto del paso 1,paso2,etc....
+  .text-title-form {
+    text-align: u.$text-align-center;
+    font-size: 1rem;
+    font-family: u.$font-family-montserrat;
+  
+  
+  }
+  
+  //texto de la descripcion del parrafo
+  .text-p-form {
+    width: 100%;
+    @include u.text("montserrat", 1rem, 1px, 400);
+    text-align: justify;
+    height: 100%;
+  
+  
+  }
+  
+  //contenedor de los botones regresar y siguiente
+  .buttons {
+    margin: 2rem 0;
+    display: u.$display-flex;
+  
+  }
+  
+  //separacion de los botones
+  .buttons button {
+    margin: 0 2rem; 
+  }
+  
+  
+  
+  //es el titulo del propio formulario(lado derecho del formulario)
+  .text-title-form-inputs{
+      @include u.text(u.$font-family-montserrat,18px,0,600)
+  }
+  
+  
+  //contenedor del crear cuenta y perfil
+  .container-title-photo-form{
+    justify-content: u.$justify-content-center;
+    align-items: u.$justify-content-center;
+      margin: 5rem;
+  }
+  
+}
+//---------------------------------------------Responsive mobile ----------------------------
+@include u.maxphone{
+  .container-form-general {
+    @include u.container-form-general();
+    position: u.$position-relative;
+    width: 100%;
+    
+    flex-direction: u.$flex-direction-column;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: u.$background-color-white;
+    margin: 0 13%;    
+  
+  
+  }
+  
+  //contenedor donde se encuentras el numero de pasos ,la descripcion y la imagen
+  .container-text-Description {
+
+
+    content: "";
+    height: 100%;
+    position: relative; 
+    width: 100%;
+    border-radius: 10px 0px 0px 10px;
+    top: 0;
+      text-align: center;
+    left: 0;}
+
+    //texto del numero de paso y descripcion
+.text-paso-y-decripcion {
+  padding: 20px;
+  align-items: center;
+
+ 
+}
+
+//titulo del formulario 
+  .title-form{
+    @include u.text('Monserrat',1rem,0,400);
+  
+    text-align: center;
+
+  }
+
+  //titulo de los pasos
+  .text-title-form {
+    text-align: u.$align-items-center;
+    @include u.text('Monserrat',1.2rem,0,400);
+text-align: center;
+  }
+
+  //descripcion
+  .text-p-form {
+    @include u.text('Monserrat',1.2rem,0,400);
+    text-align: justify;
+  }
+
+
+  .container-title-photo-form {
+    justify-content: u.$justify-content-center;
+    align-items: u.$align-items-center;
+    margin: 1rem;
+  }
+
+    .buttons {
+    display: flex;
+     flex-direction: row;
+     justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .buttons button {
+    width: 100px;
+
+    @include u.text(u.$font-family-montserrat,16px,0,600);
+    height: 40px;
+  }
+  //separacion de los botones
+.buttons button {
+padding: 30px; 
+margin: 0 20px 0 20px;
+
+}
+.text-title-form-inputs{
+  @include u.text(u.$font-family-montserrat,16px,0,600)
+}
+
+
+
+
+
+
+}
+
+
+
+@include u.min_maxTablet{
+
+  .container-form-general {
+    @include u.container-form-general();
+    position: u.$position-relative;
+    width: 55%;
+    flex-direction: u.$flex-direction-column;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: u.$background-color-white;
+    margin: 0 auto;    
+  
+  
+  }
+
+  
+  
+  .container-text-Description {
+
+  
+    content: "";
+    height: 100%;
+    position: relative; 
+    width: 100%;
+    border-radius: 10px 0px 0px 10px;
+    top: 0;
+      text-align: center;
+    left: 0;
+  }
+
+
+
+  .title-form{
+    @include u.text('Monserrat',1rem,0,400);
+    
+        text-align: center;
+  }
+
+
+  .text-title-form {
+    text-align: u.$align-items-center;
+    @include u.text('Monserrat',1.5rem,0,400);
+    text-align: center
+
+  }
+
+  .text-p-form {
+    @include u.text('Monserrat',1rem,0,400);
+    text-align: justify;
+  }
+
+  .text-title-form-inputs {
+    @include u.text('Monserrat',0.8rem,0,400);
+
+ 
+  }
+
+  .container-title-photo-form {
+    justify-content: u.$justify-content-center;
+    align-items: u.$align-items-center;
+    margin: 1rem;
+  }
+
+    .buttons {
+    display: flex;
+    flex-direction: row;
+    ;
+  }
+
+  .buttons button {
+    width: 50%;
+    @include u.text(u.$font-family-montserrat,16px,0,600);
+
+  }
+  .text-title-form-inputs{
+    @include u.text(u.$font-family-montserrat,18px,0,600);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//contenedor de los botones regresar y siguiente
+.buttons {
+  margin: 2rem 0;
+  display: u.$display-flex;
+
+}
+
+//separacion de los botones
+.buttons button {
+  margin: 0 2rem; 
+}
+
+
+
+//es el titulo del propio formulario(lado derecho del formulario)
+.text-title-form-inputs{
+    @include u.text(u.$font-family-montserrat,18px,0,600)
+}
+
+
+//contenedor del crear cuenta y perfil
+.container-title-photo-form{
+  justify-content: u.$justify-content-center;
+  align-items: u.$justify-content-center;
+    margin: 5rem;
+}
+}

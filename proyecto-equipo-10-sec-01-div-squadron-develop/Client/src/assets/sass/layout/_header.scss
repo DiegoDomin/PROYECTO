@@ -1,0 +1,527 @@
+@use "../utilities" as u;
+
+// relacionado con los titulos del nav
+
+
+
+
+
+ 
+.text-cerrar-sesion{
+  display: none;
+}
+.container-icon-perfil-hamburguer{
+
+display: none;
+}
+
+
+
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  // Estilos del icono de hamburguesa
+  .icon-hamburguesa{
+    @include u.size-icon(40px,40px)
+  }
+}
+
+@include u.desktop{
+  .content-nav {
+    display: u.$display-flex;
+    .text-nav::after {
+      content: u.$content;
+      position: u.$position-abosulte;
+      height: 5px;
+      width: 0;
+      top: 140%;
+      left: 0;
+      transition: 0.3s;
+      background-color: u.$color-hover-nav;
+    }
+  
+    .text-nav:hover::after {
+      width: 90%;
+    }
+  }
+
+.text-nav {
+  @include u.text-nav;
+  display: u.$display-flex;
+  padding: 0.4rem;
+  position: relative;
+}
+
+//estilo sobre contenedor del header
+.content-header {
+  display: u.$display-flex;
+  background-color: u.$theme-color-header;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100%;
+}
+
+
+//tamaño del logo MIRAME
+.image-logo {
+  @include u.image-logo();
+  padding: 0 1rem;
+  cursor: u.$cursor-pointer;
+}
+
+//contenedor de la imagen del perfil
+.content-perfil {
+  display: u.$display-flex;
+  align-items: u.$align-items-center;
+}
+//imagen del perfil
+.image-perfil {
+  @include u.size-icon(40px, 40px);
+  padding: 1rem;
+  cursor: u.$cursor-pointer;
+}
+//iconos de los temas
+.icon {
+  padding: 0 1rem;
+  @include u.size-icon(20px, 20px);
+}
+
+
+//----------------------- dropdown
+//contenedor principal
+.sub-menu-wrap {
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  width: 10%;
+  animation: openMenu 0.5s;
+}
+
+//contenedor del fondo
+.sub-menu {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.dropDown {
+  align-items: center;
+  padding: 5px 0;
+}
+
+//tamaño de los iconos dentro del dropdowns
+.icon-dropdown-account {
+  @include u.size-icon(45px, 45px);
+  padding: 0 0.1rem;
+
+}
+.icon-dropdown-exit-account{
+  @include u.size-icon(25px, 25px);
+  padding: 0 0.6rem;
+
+
+}
+.icon-dropdown-login {
+  @include u.size-icon(30px, 30px);
+  padding: 0 0.6rem;
+}
+
+//items del dropwdown
+.item-dropDown {
+  align-items: center;
+  justify-content: center;
+  display: u.$display-flex;
+  @include u.text("montserrat", 12px, 0, 400);
+  text-align: u.$text-align-center;
+  padding: 0.5rem 0;
+  transition: transform 0.5s;
+  text-decoration: none;
+}
+.icon-cerrar{
+  display: none;
+}
+
+.item-dropDown:hover {
+  transform: translateX(5px);
+  font-weight: 600;
+  
+}
+
+@keyframes openMenu {
+  0% {
+    height: 0px;
+    transition: height 0.5s;
+  }
+  20% {
+    height: 50px;
+
+    transition: height 0.5s;
+  }
+
+  60% {
+    height: 70px;
+    transition: height 0.5s;
+  }
+  100% {
+    height: 100px;
+    transition: height 0.5s;
+  }
+}
+
+
+}
+
+
+
+/* Estilos específicos para pantallas pequeñas (menú hamburguesa) */
+
+//telefono
+@include u.maxphone {
+
+  .menu-toggle {
+    display: block;
+    
+  }
+  .content-header {
+    display: u.$display-flex;
+    background-color: u.$theme-color-header;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+  }
+  .icon-cerrar{
+    display: u.$display-flex;
+    @include u.size-icon(20px,20px);
+    padding: 2rem 0;
+    margin: 0 80%;
+      }
+  
+      .container-icon-perfil-hamburguer{
+        display: u.$display-flex;
+        align-items: center;
+        padding:0 0 2rem 0;
+        }
+        .container-icon-perfil-hamburguer .icon-perfil-hamburguer{
+          @include u.size-icon(30px,30px)
+        }
+
+        .text-nav-perfil{
+          @include u.text-nav;
+          padding: 0 0 0 1rem;
+        }
+ 
+  .content-nav {
+    display: none;
+    z-index: 10000;
+    flex-direction: column;
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: u.$theme-color-header;
+  }
+
+  .text-nav {
+    @include u.text-nav;
+    display: u.$display-flex;
+    padding: 0.4rem;
+    position: relative;
+  }
+  
+  //estilo sobre contenedor del header
+  .content-header {
+    display: u.$display-flex;
+    background-color: u.$theme-color-header;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+  }
+  
+  .content-nav.open {
+    display: u.$display-flex;
+    overflow: hidden;
+
+  }
+  body.menu-open {
+    overflow: hidden;
+  }
+  .text-nav {
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: left;
+    padding: 1rem 0;
+  }
+  .image-perfil-menu {
+    @include u.size-icon(50px, 50px); // Ajusta el tamaño según tus necesidades
+    padding: 0 auto;
+    cursor: u.$cursor-pointer;
+  }
+
+//imagen del perfil
+.image-perfil {
+display: none;
+}
+.menu-icon{
+  margin: 0 1rem;
+}
+.text-cerrar-sesion{
+  margin: auto;
+  @include u.text(u.$font-family-montserrat,20px,1px);
+  color: u.$color-text-nav;
+text-decoration: none;
+}
+.text-cerrar-sesion{
+  display: flex;
+}
+
+
+//tamaño de
+
+//tamaño del logo MIRAME
+.image-logo {
+  @include u.image-logo();
+  padding: 0 1rem;
+  cursor: u.$cursor-pointer;
+}
+
+//contenedor de la imagen del perfil
+.content-perfil {
+  display: u.$display-flex;
+  align-items: u.$align-items-center;
+}
+//imagen del perfil
+.image-perfil {
+  @include u.size-icon(40px, 40px);
+  padding: 1rem;
+  cursor: u.$cursor-pointer;
+}l logo MIRAME
+.image-logo {
+  @include u.image-logo();
+  padding: 0 1rem;
+  cursor: u.$cursor-pointer;
+}
+
+//contenedor de la imagen del perfil
+.content-perfil {
+  display: u.$display-flex;
+  align-items: u.$align-items-center;
+}
+//imagen del perfil
+.image-perfil {
+  @include u.size-icon(40px, 40px);
+  padding: 1rem;
+  cursor: u.$cursor-pointer;
+}
+//iconos de los temas
+.icon {
+  padding: 0 1rem;
+  @include u.size-icon(20px, 20px);
+}
+
+//tamaño de los iconos dentro del dropdowns
+.icon-dropdown-account {
+  display: none;
+
+
+}
+.icon-dropdown-exit-account{
+  display: none;
+
+  
+}
+.icon-dropdown-login {
+  display: none;
+
+ 
+}
+
+//items del dropwdown
+.item-dropDown {
+  display: none;
+
+}
+.icon-cerrar{
+  display: none;
+
+}
+
+.item-dropDown:hover {
+  
+  display: none;
+
+  
+}
+}
+
+
+
+// -----------------------------------------------TABLET------------------------------------
+@include u.min_maxTablet {
+  .menu-toggle {
+    display: block;
+    
+  }
+  
+  .content-header {
+    display: u.$display-flex;
+    background-color: u.$theme-color-header;
+    justify-content: space-between;
+    height:6vh;
+    width: 100%;
+  }
+  .icon-cerrar{
+    display: flex;
+    @include u.size-icon(20px,20px);
+    padding: 2rem 0;
+    margin: 0 80%;
+      }
+  
+      .container-icon-perfil-hamburguer{
+        display: flex;
+        align-items: center;
+        padding:0 0 8rem 0rem;
+        
+        }
+        .container-icon-perfil-hamburguer .icon-perfil-hamburguer{
+          @include u.size-icon(50px,50px);
+          
+
+        }
+
+        .text-nav-perfil{
+          @include u.text-nav;
+          padding: 0 0 0 7%;
+          font-size: 1.5rem;
+        }
+ 
+  .content-nav {
+    display: none;
+    z-index: 10000;
+    flex-direction: column;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: u.$theme-color-header;
+  }
+
+  .content-nav.open {
+    display: flex;
+    overflow: hidden;
+
+  }
+  body.menu-open {
+    overflow: hidden;
+  }
+  .menu-icon{
+    margin: 0 1rem;
+  }
+  .text-nav {
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: left;
+    padding: 2rem 0;
+  }
+  .image-perfil-menu {
+    @include u.size-icon(50px, 50px); // Ajusta el tamaño según tus necesidades
+    padding: 1rem;
+    cursor: u.$cursor-pointer;
+  }
+  
+
+  .text-nav {
+    @include u.text-nav;
+    display: u.$display-flex;
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  //estilo sobre contenedor del header
+ 
+
+    
+//imagen del perfil
+.image-perfil {
+display: none;
+}
+
+.text-cerrar-sesion{
+  margin: auto;
+  @include u.text(u.$font-family-montserrat,20px,1px);
+  color: u.$color-text-nav;
+text-decoration: none;
+}
+.text-cerrar-sesion{
+  display: flex;
+}
+
+
+//tamaño del logo MIRAME
+.image-logo {
+  @include u.image-logo();
+  padding: 0 1rem;
+  cursor: u.$cursor-pointer;
+}
+
+//contenedor de la imagen del perfil
+.content-perfil {
+  display: u.$display-flex;
+  align-items: u.$align-items-center;
+}
+//imagen del perfil
+.image-perfil {
+  @include u.size-icon(40px, 40px);
+  padding: 1rem;
+  cursor: u.$cursor-pointer;
+}
+//iconos de los temas
+.icon {
+  padding: 0 1rem;
+  @include u.size-icon(20px, 20px);
+}
+
+.dropDown {
+display: none;
+}
+
+
+
+//tamaño de los iconos dentro del dropdowns
+.icon-dropdown-account {
+  display: none;
+
+
+
+}
+.icon-dropdown-exit-account{
+  display: none;
+
+
+
+
+}
+.icon-dropdown-login {
+  display: none;
+
+}
+
+//items del dropwdown
+.item-dropDown {
+  display: none;
+
+
+}
+.icon-cerrar{
+  display: none;
+
+}
+
+.item-dropDown:hover {
+
+  display: none;
+
+  
+}
+}

@@ -1,0 +1,146 @@
+.container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+}
+
+.titulo {
+    text-align: center;
+}
+
+.subtitulo {
+    text-align: center;
+}
+
+.table_pendiente {
+    border: 1px solid rgba(0, 0, 0, 1);
+    margin: 0 30px;
+    padding: 20px;
+}
+
+.pendiente {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pendiente th {
+    font-size: 12pt;
+    text-align: center;
+    color: #131217;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pendiente td {
+    font-size: 12pt;
+    text-align: center;
+    color: 0000;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.td .ordenar1,
+.td .ordenar2 {
+    text-align: center;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+.color{
+    background-color:#9dd1ce;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.color_e{
+    background-color:#edcad2;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.color_a{
+    background-color:#91f299;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    background-color: #131217; /* Cambia el color de fondo al hacer clic */
+    color: #fff; /* Cambia el color del texto al hacer clic */
+}
+
+.buscador {
+    width: 42%;
+    top:-40px;
+    text-align: right;
+    float: right;
+    position: relative; /* Añade posición relativa al contenedor padre */
+    padding: 25px;
+}
+
+input {
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 0;
+    padding: 0 18px;
+    color: #000;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    position: absolute; /* Añade posición absoluta al input */
+    right: 0; /* Alinea a la izquierda dentro del contenedor */
+}
+
+.btn {
+    width: 0;
+    height: 40px;
+    padding: 0 20px;
+    float: right;
+    background: #ae34eb;
+    line-height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    position: absolute; /* Añade posición absoluta al botón */
+    right: 0; /* Alinea a la derecha dentro del contenedor */
+}
+
+.btn i {
+    font-size: 18px;
+    color: #ae34eb;
+    transition: all 0.7s ease;
+}
+.lupita{
+    filter: invert(4%) sepia(3%) saturate(5960%) hue-rotate(206deg) brightness(94%) contrast(92%);
+    width: 40px;
+    height: 40px;
+    top: -1.02px;
+    padding: -90px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    position: absolute; /* Añade posición absoluta al botón */
+    right: 0px; 
+    
+}
+
+
+.buscador:hover input {
+    width: 350px;
+}
+
+.buscador:hover i {
+    transform: rotate(-360deg);
+}
+
+.btn:hover {
+    background: #131217;
+    color: #91f299;
+}

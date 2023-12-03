@@ -1,0 +1,220 @@
+@use "../utilities" as u;
+
+.content-wizard {
+  display: u.$display-flex;
+  justify-content: u.$justify-content-center;
+}
+
+.item-wizard {
+  position: u.$position-relative;
+  display: u.$display-flex;
+  flex-direction: column;
+  text-align: u.$text-align-center;
+  width: 7%;
+  z-index:100;
+  padding: 2%;
+}
+
+//linea del wizard
+.item-wizard:not(:first-child)::before {
+  content: u.$content;
+
+  background: linear-gradient(
+    to right,
+    u.$background-circle-wizard-active 0%,
+    u.$background-circle-wiza-desactive 0%
+    
+  );
+  position: u.$position-abosulte;
+  width: 100%;
+  height: 5px;
+  right: 3.7rem;
+  top: 3.3rem;
+  z-index: -1; /* Asegura que la línea esté detrás de los círculos */
+
+}
+
+//son los circulos del wizard
+.item {
+  width: 50px;
+  height: 50px;
+  display: u.$display-flex;
+  position: u.$position-relative;
+  justify-content: u.$justify-content-center;
+  align-items: u.$align-items-center;
+  background-color: u.$background-circle-wiza-desactive;
+  border-radius: 100%;
+  margin: 0 auto;
+  z-index: 1; /* Asegura que la línea esté detrás de los círculos */
+
+}
+
+//texto del wizard
+.text-wizard{
+  @include u.text-wizard(u.$font-family-montserrat, 0.8rem, 2px, 600);
+}
+
+
+
+//icono del wizard
+.icon-wizard {
+  @include u.size-icon(25px, 25px);
+}
+
+//cuando esta activo el circulo se pone de color azul (el fondo del icono)
+.active .item {
+  background-color: u.$background-circle-wizard-active;
+}
+//cuando se completa el paso se pone en verde el paso completado(el icono)
+.complete .item {
+  background-color: u.$background-circle-wiza-ckeck;
+  animation: circle 0.5s forwards;
+}
+
+//para la linea cuando se completa el paso (se pone verde)
+.complete:not(:first-child)::before,
+.active:not(:first-child)::before {
+  
+  animation: mov_lineas 0.3s linear forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(
+    to right,
+    u.$background-circle-wiza-ckeck 35%,
+    u.$background-circle-wiza-ckeck 20%
+  );
+}
+
+//keyframes
+@keyframes mov_lineas {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.icon-check-wizard {
+  @include u.size-icon(30px, 30px);
+}
+
+.btn-next {
+  @include u.btn(#016FF5);
+
+  font-family:"monserrat";
+}
+
+.btn-back {
+  @include u.btn(#E1EBFA);
+
+  font-family:"monserrat";
+  color: #0d0e0f;
+}
+.btn-back:hover {
+  background-color: #93abce;
+}
+
+.btn-next:hover {
+  background-color: #016ff5a9;
+}
+
+
+
+//responsive
+@include u.maxphone{
+  .item-wizard {
+    width: 100%; // Ocupa el ancho completo en dispositivos móviles
+  }
+  
+  .item {
+    width: 40px; // Ajusta el tamaño del círculo para dispositivos móviles
+    height: 40px;
+  }
+ 
+  .icon-wizard {
+    @include u.size-icon(15px, 15px);
+  }
+
+  .icon-check-wizard {
+    @include u.size-icon(15px, 15px);
+  }
+  //linea del wizard
+.item-wizard:not(:first-child)::before {
+  content: u.$content;
+
+  background: linear-gradient(
+    to right,
+    u.$background-circle-wizard-active 0%,
+    u.$background-circle-wiza-desactive 0%
+    
+  );
+  position:absolute;
+  width: 100%;
+  height: 5px;
+  right: 35%;
+  top: 1.8rem;
+  z-index: -1; /* Asegura que la línea esté detrás de los círculos */
+
+}
+.complete:not(:first-child)::before,
+.active:not(:first-child)::before {
+  
+  animation: mov_lineas 0.3s linear forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(
+    to right,
+    u.$background-circle-wiza-ckeck 35%,
+    u.$background-circle-wiza-ckeck 20%
+  );
+}
+
+
+}
+
+@include u.min_maxTablet{
+  .item-wizard {
+    width: 100%; // Ocupa el ancho completo en dispositivos móviles
+  }
+  
+  .item {
+    width: 40px; // Ajusta el tamaño del círculo para dispositivos móviles
+    height: 40px;
+  }
+ 
+  .icon-wizard {
+    @include u.size-icon(15px, 15px);
+  }
+
+  .icon-check-wizard {
+    @include u.size-icon(15px, 15px);
+  }
+  //linea del wizard
+.item-wizard:not(:first-child)::before {
+  content: u.$content;
+
+  background: linear-gradient(
+    to right,
+    u.$background-circle-wizard-active 0%,
+    u.$background-circle-wiza-desactive 0%
+    
+  );
+  position:absolute;
+  width: 100%;
+  height: 5px;
+  right: 43%;
+  top: 1.8rem;
+  z-index: -1; /* Asegura que la línea esté detrás de los círculos */
+
+}
+.complete:not(:first-child)::before,
+.active:not(:first-child)::before {
+  
+  animation: mov_lineas 0.3s linear forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(
+    to right,
+    u.$background-circle-wiza-ckeck 35%,
+    u.$background-circle-wiza-ckeck 20%
+  );
+}
+}

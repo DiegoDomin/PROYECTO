@@ -1,0 +1,399 @@
+@use "../utilities" as u;
+
+
+
+// Responsive
+
+
+@include u.desktop {
+    .container-body-reportar-caso {
+
+        display: u.$display-flex;
+        width: 70%;
+        padding: 40px 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: u.$background-color-white;
+        box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+        margin: 5% auto;
+    }
+
+    .container-reportar-caso {
+        display: u.$display-flex;
+        width: 30%;
+        height: 40%;
+        padding: 40px;
+        justify-content: center;
+
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: u.$background-color-white;
+        box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+        margin: auto;
+    }
+
+
+
+
+    .title {
+        @include u.text('Montserrat', u.$font-size-title, 0.4px, u.$font-weight-title);
+        width: 100%;
+        text-align: u.$text-align-center;
+
+    }
+
+
+    .container-report {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    //tabla 
+
+    @include u.table;
+
+    .banner-mirame img {
+        width: 40%;
+        margin: 0 30%;
+    }
+
+    .btn-editar {
+        @include u.btn(u.$background-circle-wizard-active, 50px, 40px);
+        @include u.text(u.$font-family-montserrat, 10px);
+        padding: 5px 50px;
+    }
+
+    .icon-editar {
+        @include u.size-icon(15px, 15px)
+    }
+
+    .btn-next-table {
+        @include u.btn(#679cec, 70px, 40px);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 5px 50px;
+        margin: 0 10px;
+
+    }
+
+    .btn-back-table {
+
+        @include u.btn(#E1EBFA, 70px, 40px);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 5px 50px;
+        color: #4186E8;
+
+        margin: 0 10px;
+    }
+
+    .container-bnt-table {
+        margin: 1rem 0;
+
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .icon-anterior {
+        @include u.size-icon(15px, 15px)
+    }
+
+    .icon-siguiente {
+        @include u.size-icon(15px, 15px)
+    }
+
+
+
+    .buttons-model {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .btn-next-model {
+        @include u.btn(rgb(133, 235, 204), 150px, 100px, 0, 0);
+        padding: 15px;
+        margin: 0 25px 0 0;
+        @include u.text(u.$font-family-montserrat, 12px);
+        text-align: center;
+    }
+
+    .btn-back-model {
+        @include u.btn(#8cb3ee, 100px, 100px, 0, 0);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 15px;
+        margin: 0 0 0 25px;
+        text-align: center;
+        color: #292d31;
+    }
+}
+
+
+
+
+//-------------------------------------------------MOBILE--------------------------------
+@include u.maxphone {
+    .container-body-reportar-caso {
+
+        display: u.$display-flex;
+        width: 70%;
+        padding: 40px 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: u.$background-color-white;
+        box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+        margin: 5% auto;
+    }
+
+    .container-reportar-caso {
+        display: u.$display-flex;
+        width: 60%;
+        height: 40%;
+        padding: 40px;
+        justify-content: center;
+
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: u.$background-color-white;
+        box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+        margin: 2rem auto;
+    }
+
+
+    .container-reportar-caso p {
+        text-align: center
+    }
+
+
+    .title {
+        @include u.text('Montserrat', u.$font-size-title, 0.4px, u.$font-weight-title);
+        width: 100%;
+        text-align: u.$text-align-center;
+
+    }
+
+
+    .container-report {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    @include u.table-mobile;
+
+    .banner-mirame img {
+        width: 50%;
+        margin: 0 25%;
+    }
+
+    .btn-editar {
+        @include u.btn(u.$background-circle-wizard-active, 50px, 40px);
+        @include u.text(u.$font-family-montserrat, 10px);
+        padding: 5px 50px;
+    }
+
+    .icon-editar {
+        @include u.size-icon(15px, 15px)
+    }
+
+    .btn-next-table {
+        @include u.btn(#016FF5, 70px, 40px);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 5px 50px;
+        margin: 0 10px;
+
+    }
+
+    .btn-back-table {
+
+        @include u.btn(#E1EBFA, 70px, 40px);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 5px 50px;
+        color: #4186E8;
+
+        margin: 0 10px;
+    }
+
+    .container-bnt-table {
+        margin: 1rem 0;
+
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .icon-anterior {
+        @include u.size-icon(15px, 15px)
+    }
+
+    .icon-siguiente {
+        @include u.size-icon(15px, 15px)
+    }
+
+
+    .buttons-model {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .btn-next-model {
+        @include u.btn(#7cade9, 150px, 100px, 0, 0);
+        padding: 15px;
+        margin: 0 25px 0 0;
+        @include u.text(u.$font-family-montserrat, 12px);
+    }
+
+    .btn-back-model {
+        @include u.btn(#E1EBFA, 100px, 100px, 0, 0);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 15px;
+        margin: 0 0 0 25px;
+
+        color: #1c1e20;
+    }
+}
+
+
+
+//---------------------------------------- tablet_-----------------------
+
+@include u.min_maxTablet {
+    .container-body-reportar-caso {
+
+        display: u.$display-flex;
+        width: 70%;
+        padding: 40px 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: u.$background-color-white;
+        box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+        margin: 5% auto;
+    }
+
+    .container-reportar-caso {
+        display: u.$display-flex;
+        width: 60%;
+        height: 40%;
+        padding: 40px;
+        justify-content: center;
+
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: u.$background-color-white;
+        box-shadow: 0px 0px 15px 11px rgba(0, 0, 0, 0.1);
+        margin: 3rem auto;
+    }
+
+
+
+
+    .title {
+        @include u.text('Montserrat', u.$font-size-title, 0.4px, u.$font-weight-title);
+        width: 100%;
+        text-align: u.$text-align-center;
+
+    }
+
+
+    .container-report {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    //tabla 
+
+    @include u.table-tablet;
+
+    .banner-mirame img {
+        width: 60%;
+        margin: 0 18%;
+    }
+
+    .btn-editar {
+        @include u.btn(u.$background-circle-wizard-active, 50px, 40px);
+        @include u.text(u.$font-family-montserrat, 10px);
+        padding: 5px 50px;
+    }
+
+    .icon-editar {
+        @include u.size-icon(15px, 15px)
+    }
+
+    .btn-next-table {
+        @include u.btn(#016FF5, 70px, 40px);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 5px 50px;
+        margin: 0 10px;
+
+    }
+
+    .btn-back-table {
+
+        @include u.btn(#E1EBFA, 70px, 40px);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 5px 50px;
+        color: #4186E8;
+
+        margin: 0 10px;
+    }
+
+    .container-bnt-table {
+        margin: 1rem 0;
+
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .icon-anterior {
+        @include u.size-icon(15px, 15px)
+    }
+
+    .icon-siguiente {
+        @include u.size-icon(15px, 15px)
+    }
+
+
+
+    .buttons-model {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .-model {
+        @include u.btn(#016FF5, 150px, 100px, 0, 0);
+        padding: 15px;
+        margin: 0 25px 0 0;
+        @include u.text(u.$font-family-montserrat, 12px);
+    }
+
+    .btn-back-model {
+        @include u.btn(#E1EBFA, 100px, 100px, 0, 0);
+        @include u.text(u.$font-family-montserrat, 12px);
+        padding: 15px;
+        margin: 0 0 0 25px;
+
+        color: #4186E8;
+    }
+
+
+}

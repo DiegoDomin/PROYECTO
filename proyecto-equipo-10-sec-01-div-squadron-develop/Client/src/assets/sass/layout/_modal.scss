@@ -1,0 +1,156 @@
+@use "../utilities" as u;
+
+
+  //--------------------------------------TELEFONO
+  @include u.maxphone{
+
+    .modal {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: none;
+        justify-content: u.$justify-content-center;
+        align-items: u.$align-items-center;
+      }
+
+    .modal-container {
+        position: u.$position-relative;
+        padding: 1rem;
+        width: 80%;
+        overflow-y: auto;
+        background-color: #fff;
+      }
+
+      .modal-close {
+        position: u.$position-abosulte;
+        top: 1rem;
+        right: 1rem;
+      }
+      
+      .modal.is-open {
+        display: u.$display-flex;
+        
+      }
+
+      .title-modal{
+        @include u.text('roboto',1rem);
+        text-align: u.$text-align-center;
+
+    }
+      .name-modal{
+        @include u.text('roboto',0.8rem,0,600);
+        text-align: u.$text-align-center;
+
+      }
+      .p-modal{
+        @include u.text('roboto',0.9rem);
+
+      }
+  }
+
+  @include u.desktop{
+
+    .modal {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .modal-container {
+        position: relative;
+        padding: 1rem;
+        min-width: 320px;
+        max-width: 480px;
+        min-height: 200px;
+        max-height: 600px;
+        overflow-y: auto;
+        background-color: #fff;
+      }
+      
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      
+      .modal.is-open {
+        display: flex;
+      }
+    
+
+      .title-modal{
+        @include u.text('roboto',1rem);
+        text-align: u.$text-align-center;
+
+    }
+      .name-modal{
+        @include u.text('roboto',0.8rem,0,600);
+        text-align: u.$text-align-center;
+
+      }
+      .p-modal{
+        @include u.text('roboto',0.9rem);
+
+      }
+  }
+
+  
+  @include u.min_maxTablet{
+    .modal {
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      background-color: rgba(0, 0, 0, 0.75);
+      display: none;
+      justify-content: u.$justify-content-center;
+      align-items: u.$align-items-center;
+    }
+
+  .modal-container {
+      position: u.$position-relative;
+      padding: 1rem;
+      width: 80%;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+
+    .modal-close {
+      position: u.$position-abosulte;
+      top: 1rem;
+      right: 1rem;
+    }
+    
+    .modal.is-open {
+      display: u.$display-flex;
+      
+    }
+
+    .title-modal{
+      @include u.text('roboto',1rem);
+      text-align: u.$text-align-center;
+
+  }
+    .name-modal{
+      @include u.text('roboto',0.8rem,0,600);
+      text-align: u.$text-align-center;
+
+    }
+    .p-modal{
+      @include u.text('roboto',0.9rem);
+
+    }
+  }
