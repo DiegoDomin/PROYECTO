@@ -96,6 +96,8 @@ display: none;
   right: 1%;
   width: 10%;
   animation: openMenu 0.5s;
+  z-index: 1000;
+
 }
 
 //contenedor del fondo
@@ -107,12 +109,14 @@ display: none;
 .dropDown {
   align-items: center;
   padding: 5px 0;
+
 }
 
 //tamaño de los iconos dentro del dropdowns
 .icon-dropdown-account {
   @include u.size-icon(45px, 45px);
   padding: 0 0.1rem;
+
 
 }
 .icon-dropdown-exit-account{
@@ -124,10 +128,12 @@ display: none;
 .icon-dropdown-login {
   @include u.size-icon(30px, 30px);
   padding: 0 0.6rem;
+  
 }
 
 //items del dropwdown
 .item-dropDown {
+  
   align-items: center;
   justify-content: center;
   display: u.$display-flex;
@@ -369,7 +375,7 @@ text-decoration: none;
     display: u.$display-flex;
     background-color: u.$theme-color-header;
     justify-content: space-between;
-    height:6vh;
+    height:10%;
     width: 100%;
   }
   .icon-cerrar{
