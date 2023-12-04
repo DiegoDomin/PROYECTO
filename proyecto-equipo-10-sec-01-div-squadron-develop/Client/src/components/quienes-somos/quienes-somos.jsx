@@ -4,10 +4,13 @@ import pilarestitulo from "../../assets/img/pilartitulo.jpeg";
 const QuienesSomos = () => {
     return (
         <div className="quienes_somos">
-            <div className="title">
-                <h1>¿Quiénes somos?</h1>
-                <h2> MIRAME</h2>
+            <div className="title22">
+                <h1>¿QUIENES SOMOS?</h1>
             </div>
+            <div className="tit">
+            <h2> MIRAME</h2>
+            </div>
+            
             <div className="video">
                 
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/6aPfrs6J490?si=gb2Ft_d9w58C-avZ" title="YouTube video player" 

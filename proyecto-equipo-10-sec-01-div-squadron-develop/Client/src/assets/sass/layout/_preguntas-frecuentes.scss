@@ -12,13 +12,17 @@
     border-radius: 10px;
   }
   
-
   .title2 {
-    @include u.text('Montserrat', u.$font-size-title, 0.4px, u.$font-weight-title);
+    @include u.text(u.$font-family-montserrat, 1rem);
   text-align: u.$text-align-center;
   margin: 5% auto;
   }
   
+  .titulop{
+    @include u.text(u.$font-family-montserrat, 1.5rem);
+    text-align: u.$text-align-center;
+    margin: 5% auto;
+  }
 
   .texto {
     margin: 20px 10%;

@@ -1,9 +1,16 @@
 @use "../utilities" as u;
 
-.title {
-  @include u.text('Montserrat', 0.1px);
+.title22 {
   text-align: u.$text-align-center;
+  @include u.text(u.$font-family-montserrat, 1rem);
 }
+
+.tit {
+  @include u.text(u.$font-family-montserrat, 1rem);
+  text-align: u.$text-align-center;
+  margin: 3% 50%;
+}
+
 
 .quienes_somos {
   display: u.$display-flex;
@@ -29,29 +36,39 @@
     }
   }
   
+  .video {
+    text-align: center;
+    margin: 14% 14%; // Se ajustó el margen superior para colocar el .video debajo de .title22
+    height: auto;
 
+    @include u.maxphone {
+      margin: 10% 10%; // Ajusta el margen en pantallas más pequeñas
+    }
+  
+    @include u.min_maxTablet {
+      margin: 12% 12%; // Ajusta el margen en pantallas medianas y grandes
+    }
+  }
 
-  .banner {
+  .banner,
+  .banner_pilares,
+  .pilares {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin: 0 30%;
+    margin: 0 10%;
     border-radius: 10px;
     max-width: 60%; /* La imagen no será más ancha que su contenedor */
-    height: auto; 
-  }
-  
-  .banner_pilares, .pilares {
-    margin: 0 25%;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
     height: auto;
-    max-width: 60%;
-}
-.video {
-  text-align: center;
-  margin: 0 auto;
-  margin: 20px;
-  height: auto;
-}
+  
+    @include u.maxphone {
+      max-width: 80%; // Ajusta el ancho en pantallas más pequeñas
+      margin: 0 5%;
+    }
+  
+    @include u.min_maxTablet {
+      max-width: 70%; // Ajusta el ancho en pantallas medianas y grandes
+      margin: 0 15%;
+    }
+  }
 
   .texto{
     @include u.text('Montserrat', 1.3rem, 0px, 400);
