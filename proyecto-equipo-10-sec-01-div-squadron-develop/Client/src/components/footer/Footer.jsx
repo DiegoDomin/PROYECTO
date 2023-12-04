@@ -1,7 +1,7 @@
 import { useState } from "react";
 import icon_ig from "../../assets/icons/icon-ig.png";
 import icon_fb from "../../assets/icons/icon-fb.png";
-import Logo_Footer from "../../assets/img/logo.png";
+import Logo_Footer from "../../assets/img/logo_correcto.png";
 
 const Footer = () => {
   const [link] = useState(

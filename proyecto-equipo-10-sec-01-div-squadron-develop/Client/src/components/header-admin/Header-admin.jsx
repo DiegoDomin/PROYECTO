@@ -1,6 +1,6 @@
 import NavigationAD from "./navigation-admin/Navigation-admin";
 import perfilFoto from "../../assets/img/img-perfil.png"
-import logoMirame from "../../assets/img/logo.png";
+import logoMirame from "../../assets/img/logo_correcto.png";
 import DropDown from "../dropdawn/DropDown";
 import { useState } from "react";
 

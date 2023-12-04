@@ -1,6 +1,6 @@
 import perfilFoto from "../../assets/img/img-perfil.png"
 import Navigation from "./navigation-usuario-registrado/Navigation";
-import logoMirame from "../../assets/img/logo.png";
+import logoMirame from "../../assets/img/logo_correcto.png";
 import DropDown_Usuario from "../dropdown-usuario-registrado/DropDown-usuario";
 import { useState } from "react";
 
