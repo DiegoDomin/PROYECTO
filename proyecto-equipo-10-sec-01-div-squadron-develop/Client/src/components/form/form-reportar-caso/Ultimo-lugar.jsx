@@ -15,7 +15,7 @@ function Ultimo_lugar() {
     "UltimoReportar"
   );
   const [selectedCoordinates, setSelectedCoordinates] = useState(null);
-
+ 
   //se guarda las coordenadas
 
   useEffect(() => {

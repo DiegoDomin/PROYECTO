@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import axios from 'axios';
 
 const MapForm = ({ onCoordinatesChange }) => {
   const [map, setMap] = useState(null);
   let markerRef = null;
+  const [searchInput, setSearchInput] = useState('');
+  const [autocompleteOptions, setAutocompleteOptions] = useState([]);
 
   useEffect(() => {
     const storedCoordinates = JSON.parse(localStorage.getItem('mapCoordinates')) || { lat: 13.6673, lng: -88.9783 };
@@ -44,11 +47,58 @@ const MapForm = ({ onCoordinatesChange }) => {
     return () => {
       newMap.off('click', mark);
       newMap.remove();
-      
     };
   }, [onCoordinatesChange]);
 
-  return <div id="mapForm" style={{ height: '400px', width: '400px' }}></div>;
+  const handleSearchInputChange = async (e) => {
+    const input = e.target.value;
+    setSearchInput(input);
+
+    try {
+      const response = await axios.get('https://nominatim.openstreetmap.org/search', {
+        params: {
+          format: 'json',
+          q: input,
+          limit: 5,
+          viewbox: '-180,-90,180,90',
+        },
+      });
+
+      setAutocompleteOptions(response.data);
+    } catch (error) {
+      console.error('Error en la búsqueda de autocompletado:', error);
+    }
+  };
+
+  const handleOptionClick = (option) => {
+    setSearchInput(option.display_name);
+    const clickedCoordinates = [parseFloat(option.lat), parseFloat(option.lon)];
+    onCoordinatesChange({ lat: clickedCoordinates[0], lng: clickedCoordinates[1] });
+
+    setAutocompleteOptions([]);
+    map.flyTo(clickedCoordinates, 14);
+  };
+
+  return (
+    <div>
+      <div id="mapForm" style={{ height: '400px', width: '400px' }}></div>
+      <form>
+        <input
+          type='text'
+          placeholder='Buscar una ubicación'
+          value={searchInput}
+          onChange={handleSearchInputChange}
+        />
+        <div id='autocomplete-options'>
+          {autocompleteOptions.map((option) => (
+            <div key={option.place_id} onClick={() => handleOptionClick(option)}>
+              {option.display_name}
+            </div>
+          ))}
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default MapForm;
