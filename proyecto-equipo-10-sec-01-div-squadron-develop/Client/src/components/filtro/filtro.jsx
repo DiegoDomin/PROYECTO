@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './filtro.css'; // Agrega la importación del archivo de estilos CSS
 
 const data = [

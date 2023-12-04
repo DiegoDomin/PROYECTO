@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const database = require('./config/database.config')
-
+const cors =require("cors")
 const apiRouter = require ("./routes/index.router");
 
 const app = express();
@@ -17,7 +17,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+app.use(cors({
+    origin:'http://localhost:5173'
+}));
 //rutas estaticas
 app.use(express.static(path.join(__dirname, 'public')));
 

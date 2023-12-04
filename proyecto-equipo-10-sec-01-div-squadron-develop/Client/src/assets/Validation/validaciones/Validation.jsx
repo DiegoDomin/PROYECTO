@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLocalStorage } from "./useLocalStorage";
-import { createForm } from "../../../services/form.service";
-export const Validation = (initialForm, validateForm, pages, steps) => {
+export const Validation = (initialForm, validateForm) => {
   // Utiliza useLocalStorage para el estado del formulario
   const [form, setForm] = useLocalStorage("formData", initialForm); // Aquí se utiliza useLocalStorage
 
@@ -76,24 +75,11 @@ export const Validation = (initialForm, validateForm, pages, steps) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    // Verificar si estás en el último paso antes de enviar el formulario
-    if (pages === steps.length) {
-      alert("Enviando formulario..............");
-    } else {
-      // Si no estás en el último paso, realiza otras acciones o simplemente evita el envío.
-      console.log("No estás en el último paso");
-    }
+
   };
   
 
-  const submitForm = async (form) => {
-    try {
-      await createForm(form);
-      setForm(initialForm);
-    } catch (error) {
-      console.error("No se ha podido enviar el formulario", error);
-    }
-  };
+
 
   const clearForm = () => {
 
@@ -111,6 +97,5 @@ export const Validation = (initialForm, validateForm, pages, steps) => {
     handleSubmit,
     saveData,
   clearForm
-  ,submitForm
   };
 };

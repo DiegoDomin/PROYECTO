@@ -193,7 +193,6 @@ controller.getPDF = async (req, res) => {
     doc.pipe(res);
 
     // Agrega contenido al PDF según tus necesidades
-    doc.image('/ruta/a/tu/imagen.png', { width: 100, height: 100 });
 
     doc.text(`Nombres: ${disapperData.name}`);
     doc.text(`Apellidos: ${disapperData.last_name}`);

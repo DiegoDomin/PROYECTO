@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { Validation } from "../../../assets/Validation/validaciones/Validation";
 import { useLocalStorage } from "../../../assets/Validation/validaciones/useLocalStorage";
 import { useState } from "react";
+import { Login } from "../../../services/form.service";
 function Iniciar_sesion(){
 
   const initialForm = {
@@ -24,6 +25,24 @@ function Iniciar_sesion(){
  );
 
  
+ const handleInicioSesion = async () => {
+  try {
+    // Aquí puedes obtener los valores del formulario
+    const correoElectronico = form.correoElectronicoI;
+    const contrasena = form.contrasenaI;
+
+    // Llamada a la función de inicio de sesión
+    const resultadoInicioSesion = await Login(correoElectronico, contrasena);
+
+    // Realizar acciones adicionales si es necesario
+    console.log("Inicio de sesión exitoso:", resultadoInicioSesion);
+
+    // Aquí puedes redirigir o realizar otras acciones después del inicio de sesión exitoso
+  } catch (error) {
+    // Manejo de errores durante el inicio de sesión
+    console.error("Error durante el inicio de sesión:", error.message);
+  }
+};
 
 
 
@@ -44,12 +63,22 @@ function Iniciar_sesion(){
       <Label text_label={"Contraseña"} htmlFor={"contrasena"}/>
 
       <section className="container-password">
-      <input type={showPass ?"text":"password"} name="contrasenaI" placeholder="Ej. Usu@r1o12." id="contrasena" value={form.contrasenaI}/>
+      <input
+  type={showPass ? "text" : "password"}
+  name="contrasenaI"
+  placeholder="Ej. Usu@r1o12."
+  id="contrasena"
+  value={form.contrasenaI}
+/>
+
+
       {showPass ? <img src={icon_close_password} className="icon-eye-password" onClick={()=>setShowPass(!showPass)}/>:<img src={icon_eye_password} className="icon-eye-password" onClick={()=>setShowPass(!showPass)}/>}
 </section>
   {errors.contrasenaI && (
           <p className="p-text-form-error">{errors.contrasenaI}</p>
         )}
+        <button onClick={handleInicioSesion} type="submit">Iniciar Sesión</button>
+
       <NavLink to="/crear-cuenta" className="question-create-account">
         ¿Aun no tienes cuenta?Crea una cuenta aca
       </NavLink>

@@ -11,7 +11,6 @@ function Fotografia_usuario_registrado() {
 
   const [pathImage, setPathImage] = useState("../../../assets/icons/upload-image-icon.png");
   const [file, setFile] = useState();
-  const [image, setImage] = useState(null);
 
 
   const [storedForm] = useLocalStorage(
@@ -29,7 +28,9 @@ function Fotografia_usuario_registrado() {
   const onFileChnage = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       const file =e.target.files[0]
+      
       if(file.type.includes("image")){
+        
         const reader =new FileReader()
         reader.readAsDataURL(file)
 
@@ -45,7 +46,9 @@ function Fotografia_usuario_registrado() {
       }
   }
 }
-  
+const handleButtonClick = () => {
+  document.querySelector('.input-update').click();
+};
   // Uso del componente Validation con el hook useLocalStorage
   const { form, errors, handleBlur,handleChange } = Validation(
     storedForm,
@@ -136,26 +139,32 @@ function Fotografia_usuario_registrado() {
       </section>
 
       <div className="container-upload-image">
-        <label
-          className="upload-label"
-          onClick={() => document.querySelector(".input-update").click()}
-        ></label>
-        <div className="src-file1">
-          <input
-            type="file"
-            name="img"
-          
-            accept="image/*"
-            aria-label="Archivo"
-            className="input-update"
-            hidden
-            onChange={onFileChnage}
-          />
-       
+      <label className="upload-label" onClick={handleButtonClick}>
+        {/* Contenido del label, como una vista previa de la imagen */}
+        <img src={pathImage} className="fotografia" alt="Vista previa" />
+        {/* Agrega aquí cualquier otro contenido que desees */}
+      </label>
 
-          <img src={pathImage} className="fotografia"/>
-        </div>
+      <div className="src-file1">
+        <input
+          type="file"
+          name="img"
+          accept="image/*"
+          aria-label="Archivo"
+          className="input-update"
+          hidden
+          onChange={onFileChnage}
+        />
+
+        
       </div>
+      {/* Botón para cambiar la imagen */}
+        <button type="button" onClick={handleButtonClick}  className="btn-cambiar-img">
+        
+          Cambiar Imagen
+        </button>
+    </div>
+
       <section>
         <span>
    
