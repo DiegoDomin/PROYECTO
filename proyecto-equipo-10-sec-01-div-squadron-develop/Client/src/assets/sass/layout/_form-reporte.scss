@@ -85,7 +85,7 @@ background: #BDFFF7;
 .s-form-fotografia{
   @include u.text(u.$font-family-montserrat,12px,0px,700);    
 
-    margin: 0 20%
+    margin: 0 ;
 }
 .p-form-report{
   @include u.text(u.$font-family-montserrat,20px,0px,500);    
@@ -398,6 +398,10 @@ background: #BDFFF7;
       text-align: justify;
     }
 
+    .btn-cambiar-img{
+      
+      
+    }
 }
 
 

@@ -68,7 +68,6 @@ display: none;
   @include u.image-logo();
   padding: 0 1rem;
   cursor: u.$cursor-pointer;
-  margin-top: 1rem; 
 }
 
 //contenedor de la imagen del perfil
@@ -278,6 +277,8 @@ text-decoration: none;
 
 
 //tamaño de
+
+
 
 //tamaño del logo MIRAME
 .image-logo {

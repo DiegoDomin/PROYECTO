@@ -301,7 +301,7 @@ const Map = () => {
           <h3 className='letter'>RESULTADOS DE LA BUSQUEDA</h3>
           <ul>
             {searchResults.map((result) => (
-              <li key={result.lat + result.lon}>{result.display_name}</li>
+              <li key={result.lat + result.lon} className='result'>{result.display_name}</li>
             ))}
           </ul>
         </div>
