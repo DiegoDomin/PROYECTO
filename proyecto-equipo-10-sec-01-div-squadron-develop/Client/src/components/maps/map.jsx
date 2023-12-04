@@ -305,7 +305,7 @@ const Map = () => {
             ))}
           </ul>
         </div>
-        <div id='map' style={{ height: '400px',width:'740px' }}></div>
+        <div id='map'></div>
       </div>
     </div>
   );
