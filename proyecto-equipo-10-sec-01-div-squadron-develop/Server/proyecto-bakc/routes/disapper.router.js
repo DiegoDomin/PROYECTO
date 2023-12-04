@@ -10,9 +10,9 @@ const disapperController = require("../controllers/disapper.controller");
 
 
 // router.get("/", disapperController.findAll);
-router.post("/", createFormValidator, validateForm, disapperController.create);
+router.post("/",createFormValidator, validateForm, disapperController.create);
 
-//editar formulario
+//editar formulari
 router.put("/:identifier",createFormValidator,validateForm,disapperController.editForm);
 //sustitiible de lo que el usuario coloque
 router.get("/:identifier", disapperController.findOneById);
@@ -20,5 +20,9 @@ router.get("/:identifier", disapperController.findOneById);
 router.get("/",disapperController.findAll);
 router.get("/pdf/:identifier",disapperController.getPDF);
 
+/////
+
+
+///
 router.delete("/:identifier", validateForm,idInParamsValidator, disapperController.deleteById);
 module.exports = router;

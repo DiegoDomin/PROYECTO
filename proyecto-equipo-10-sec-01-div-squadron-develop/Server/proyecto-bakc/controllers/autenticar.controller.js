@@ -1,6 +1,8 @@
 const User = require("../models/user.model");
 const controller = {};
 const httpError = require("http-errors");
+const debug = require("debug")("app:autenticar-controller");
+
 const createTransport =require("../mail/mail")
 const { createToken, verifyToken } = require("../utils/jwt.tools");
 controller.register = async (req, res, next) => {
@@ -96,6 +98,38 @@ controller.register = async (req, res, next) => {
       next(error);
     }
   };
+
+
+  controller.logout = async (req, res, next) => {
+    try {
+      const { token } = req.body; // Supongo que estás enviando el token en el cuerpo de la solicitud
+  
+      // Verificar el token para asegurarse de que sea válido
+      const decoded = await verifyToken(token);
+  
+      // Obtener el usuario asociado al token
+      const user = await User.findById(decoded.userId);
+  
+      if (!user) {
+        throw httpError(404, "Usuario no encontrado");
+      }
+  
+      // Eliminar el token de la lista de tokens del usuario
+      user.tokens = user.tokens.filter((t) => t !== token);
+  
+      // Guardar el usuario actualizado en la base de datos
+      await user.save();
+      debug("Usuario después del logout:", user);
+      return res.status(200).json({ message: "Logout exitoso" });
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  controller.profile =async (req,res)=>{
+
+    const {user}=req;
+    }
 
   //enviar correo
 
