@@ -3,7 +3,6 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 
-
 const Map = () => {
   const [map, setMap] = useState(null);
   const [searchInput, setSearchInput] = useState('');
@@ -34,6 +33,24 @@ const Map = () => {
       newMap.remove();
     };
   }, []);
+
+  useEffect(() => {
+    if (!map) return;
+
+    const handleDocumentClick = (event) => {
+      const autocompleteOptionsElement = document.getElementById('autocomplete-options');
+
+      if (autocompleteOptionsElement && !autocompleteOptionsElement.contains(event.target)) {
+        setAutocompleteOptions([]);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [map]);
 
   function onMapClick(e) {
     const clickedCoordinates = [e.latlng.lat, e.latlng.lng];
@@ -172,6 +189,10 @@ const Map = () => {
   return (
     <div className='map-container'>
       <div id='filter-form'>
+      <label>FILTROS</label>
+      <p>
+
+      </p>
         <label>
           Género:
           <div className='genero-options'>
@@ -224,6 +245,9 @@ const Map = () => {
           </div>
         </label>
         <label>
+        <p>
+          
+        </p>
           Edad:
           <div className='edad-options'>
             <label className='toggleButton' onClick={handleToggleEdadOptions}>
@@ -248,7 +272,7 @@ const Map = () => {
             )}
           </div>
         </label>
-        <button type='button' onClick={handleFilterSubmit}>
+        <button type='button-busqueda' onClick={handleFilterSubmit}>
           Aplicar Filtros
         </button>
 
@@ -274,7 +298,7 @@ const Map = () => {
       
 
         <div id='search-results'>
-          <h3>Resultados de la búsqueda:</h3>
+          <h3 className='letter'>RESULTADOS DE LA BUSQUEDA</h3>
           <ul>
             {searchResults.map((result) => (
               <li key={result.lat + result.lon}>{result.display_name}</li>
@@ -288,4 +312,3 @@ const Map = () => {
 };
 
 export default Map;
- 
