@@ -6,14 +6,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 70%;
+    width: 110%;
+    height: 100%;
     flex-wrap: wrap;
     border-radius: 20px;
     background: #131217;
     box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
-    margin: 1% 2% 1% 0 ;
-    margin-left:20%;
+    margin: 1% 7% 1% 0 ;
+    margin-left:10%;
     top:10px;
 
   }
@@ -43,7 +43,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 100;
-    margin: 8% 0 0 15%;
+    margin: 10% 0 0 15%;
     @include u.text(u.$font-family-montserrat, 1rem);
     margin-bottom: 10px;
   }
@@ -51,7 +51,7 @@
   .form-mapa input[type=text] {
     width: 128%;
     border: 1px solid rgb(21, 22, 68);
-    margin: -10% auto; /* Ajusta la posición vertical y centra horizontalmente */
+    margin: -5% auto; /* Ajusta la posición vertical y centra horizontalmente */
     @include u.text(u.$font-family-montserrat, 1rem);
     
     
@@ -107,6 +107,7 @@
 
   /* Estilos para el mapa */
   #map {
+    
     z-index: 1; /* Asegura que el mapa esté detrás de las opciones de autocompletado */
   }
 
@@ -115,11 +116,9 @@
   display: flex;
 }
 
-}
-
 .filtroContainer {
   //position: sticky; /* Asegura que el contenedor del filtro sea fijo en la pantalla */
-  top: 80%; /* Ajusta según sea necesario para centrar verticalmente */
+  top: 100%; /* Ajusta según sea necesario para centrar verticalmente */
   left: 0;
   background-color: #f2f2f2;
   padding: 20px;
@@ -186,33 +185,16 @@
 // Estilos para el contenedor del mapa y resultados de búsqueda
 .container-mapa {
   display: flex;
+    
   flex-direction: column;
 
+  //esto es para el mapa importante
   #map {
     width: 100%; 
-    height: 300px; 
+    height: 600px; 
   }
 
-  @media screen and (min-width: 600px) {
-    #map {
-      height: 400px; 
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .container-mapa {
-      width: 70%; // Reduce el ancho en pantallas más grandes
-      margin-left: 10%; // Ajusta el margen izquierdo para pantallas más grandes
-    }
-  @media screen and (min-width: 1024px) {
-    #map {
-      height: 600px; 
-    }
-  }
-}
-
-
-// Estilos para el formulario de búsqueda y resultados de búsqueda
+  // Estilos para el formulario de búsqueda y resultados de búsqueda
 .form-mapa,
 #search-results {
   margin-bottom: 20px;
@@ -222,4 +204,445 @@
 .genero-options input{
   padding: 10px;
 }
+}
+
+
+
+  
+}
+
+
+//---------------------------TABLET---------
+@include u.min_maxTablet {
+  .container-mapa {
+    background: #131217;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    width: 140%;
+    height: 100%;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+    margin: 1% 7% 1% 0 ;
+    margin-left:5%;
+    top:10px;
+
+  }
+  
+  
+  .letter{
+    color:rgb(255, 245, 245);
+    text-align: center;
+    @include u.text(u.$font-family-montserrat, 1.2rem);
+
+  }
+
+  /* Estilos para el contenedor principal */
+  .custom-marker {
+    width: 100px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .result{
+    color:rgb(255, 245, 245);
+  }
+
+  /* Estilos para la barra de búsqueda */
+  .form-mapa {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    margin: 15% 0 0 15%;
+    @include u.text(u.$font-family-montserrat, 1rem);
+    margin-bottom: 10px;
+  }
+  
+  .form-mapa input[type=text] {
+    width: 128%;
+    border: 1px solid rgb(21, 22, 68);
+    margin: -5%- auto; /* Ajusta la posición vertical y centra horizontalmente */
+    @include u.text(u.$font-family-montserrat, 1rem);
+    
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  .search-results {
+    position: relative;
+    width: auto;
+    z-index: 2; // Asegura que el contenedor de resultados esté sobre el mapa
+    @include u.text(u.$font-family-montserrat, 1rem);
+  }
+
+  #search-results ul {
+    list-style: none;
+    padding: 0;
+  }
+
+
+  
+
+  /* Estilos para las opciones de autocompletado */
+  #autocomplete-options {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: absolute;
+    background-color: #e9e0e0;
+    top: 100%; 
+    width: 130%;
+    left: 0;
+    height: min-content;
+    @include u.text(u.$font-family-montserrat, 1rem);
+  }
+  
+  .autocomplete-visible #autocomplete-options {
+    display: flex;
+  }
+
+
+  #autocomplete-options div {
+    cursor: pointer;
+  }
+
+  #autocomplete-options div:hover {
+    background-color: #f1f1f1;
+  }
+
+
+
+  /* Estilos para el mapa */
+  #map {
+    
+    z-index: 1; /* Asegura que el mapa esté detrás de las opciones de autocompletado */
+  }
+
+
+.mapaContainer {
+  display: flex;
+}
+
+.filtroContainer {
+  //position: sticky; /* Asegura que el contenedor del filtro sea fijo en la pantalla */
+  top: 30%; /* Ajusta según sea necesario para centrar verticalmente */
+  left: 0;
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-width: 200px;
+  box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ajusta la altura según sea necesario */
+}
+
+.mapContainer {
+  position: relative;
+  flex: 1;
+}
+
+
+// Estilos para el contenedor del mapa
+.map-container {
+  display: flex;
+}
+
+#filter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%; /* Ajusta el ancho para pantallas más pequeñas */
+  padding: 40px 20px; /* Ajusta los espaciados para pantallas más pequeñas */
+  height: 100%;
+  background: #ffffff; /* Cambié el fondo para que coincida con el filtroContainer */
+  box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: black;
+  @include u.text(u.$font-family-montserrat, 1rem);
+  z-index: 200;
+  margin:auto 0 auto 3%;
+  .genero-options,
+  .edad-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .toggleButton {
+      cursor: pointer;
+    }
+
+    label {
+      margin-top: 5px;
+    }
+  }
+
+  button {
+    margin-top: 3%;
+    cursor: pointer;
+    background-color: #131217;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+
+// Estilos para el contenedor del mapa y resultados de búsqueda
+.container-mapa {
+  display: flex;
+    
+  flex-direction: column;
+
+  //esto es para el mapa importante
+  #map {
+    width: 100%; 
+    height: 700px; 
+  }
+
+  // Estilos para el formulario de búsqueda y resultados de búsqueda
+.form-mapa,
+#search-results {
+  margin-bottom: 20px;
+}
+
+
+.genero-options input{
+  padding: 10px;
+}
+}
+
+
+}
+
+
+
+
+
+
+
+
+//----------------------------------TELEFONO-------------
+@include u.maxphone{
+  .container-mapa {
+    background: #131217;
+    display: flex;
+      z-index: -1;
+      
+    flex-direction: column;
+    align-items: center;
+    width: 140%;
+    height: 100%;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+    margin: 1% 7% 1% 0 ;
+    margin-left:5%;
+    top:10px;
+
+  }
+  
+  
+  .letter{
+    color:rgb(255, 245, 245);
+    text-align: center;
+    @include u.text(u.$font-family-montserrat, 1.2rem);
+
+  }
+
+  /* Estilos para el contenedor principal */
+  .custom-marker {
+    width: 100px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .result{
+    color:rgb(255, 245, 245);
+  }
+
+  /* Estilos para la barra de búsqueda */
+  .form-mapa {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    
+    margin: 15% 0 0 15%;
+    @include u.text(u.$font-family-montserrat, 1rem);
+    margin-bottom: 10px;
+  }
+  
+  .form-mapa input[type=text] {
+    width: 128%;
+    border: 1px solid rgb(21, 22, 68);
+    margin: -5%- auto; /* Ajusta la posición vertical y centra horizontalmente */
+    @include u.text(u.$font-family-montserrat, 1rem);
+    
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  .search-results {
+    position: relative;
+    width: auto;
+    z-index: 2; // Asegura que el contenedor de resultados esté sobre el mapa
+    @include u.text(u.$font-family-montserrat, 1rem);
+  }
+
+  #search-results ul {
+    list-style: none;
+    padding: 0;
+  }
+
+
+  
+
+  /* Estilos para las opciones de autocompletado */
+  #autocomplete-options {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: absolute;
+    background-color: #e9e0e0;
+    top: 100%; 
+    width: 130%;
+    left: 0;
+    height: min-content;
+    @include u.text(u.$font-family-montserrat, 1rem);
+  }
+  
+  .autocomplete-visible #autocomplete-options {
+    display: flex;
+  }
+
+
+  #autocomplete-options div {
+    cursor: pointer;
+  }
+
+  #autocomplete-options div:hover {
+    background-color: #f1f1f1;
+  }
+
+
+
+  /* Estilos para el mapa */
+  #map {
+    
+    z-index: 1; /* Asegura que el mapa esté detrás de las opciones de autocompletado */
+  }
+
+
+.mapaContainer {
+  display: flex;
+}
+
+.filtroContainer {
+  //position: sticky; /* Asegura que el contenedor del filtro sea fijo en la pantalla */
+  top: 30%; /* Ajusta según sea necesario para centrar verticalmente */
+  left: 0;
+  
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-width: 200px;
+  box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ajusta la altura según sea necesario */
+}
+
+.mapContainer {
+  position: absolute;
+  
+  flex: 1;
+}
+
+
+// Estilos para el contenedor del mapa
+.map-container {
+  display: flex;
+}
+
+#filter-form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+
+  align-items: center;
+  width: 50%; /* Ajusta el ancho para pantallas más pequeñas */
+  padding: 40px 20px; /* Ajusta los espaciados para pantallas más pequeñas */
+  height: 30%;
+  bottom: 0;
+  background: #ffffff; /* Cambié el fondo para que coincida con el filtroContainer */
+  box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  color: black;
+  @include u.text(u.$font-family-montserrat, 1rem);
+  z-index: 200;
+  
+  .genero-options,
+  .edad-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .toggleButton {
+      cursor: pointer;
+    }
+
+    label {
+      margin-top: 5px;
+    }
+  }
+
+  button {
+    margin-top: 3%;
+    cursor: pointer;
+    background-color: #131217;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+
+// Estilos para el contenedor del mapa y resultados de búsqueda
+.container-mapa {
+  display: flex;
+    
+  flex-direction: column;
+
+  //esto es para el mapa importante
+  #map {
+    width: 100%; 
+    height: 700px; 
+  }
+
+  // Estilos para el formulario de búsqueda y resultados de búsqueda
+.form-mapa,
+#search-results {
+  margin-bottom: 20px;
+}
+
+
+.genero-options input{
+  padding: 10px;
+}
+}
+
 }

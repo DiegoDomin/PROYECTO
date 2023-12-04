@@ -71,11 +71,6 @@ background: #BDFFF7;
 
 }
 
-.src-file1::before {
-  content: 'subir imagen';
- 
-}
-
 .title-form-report{
   @include u.text(u.$font-family-montserrat,28px,0px,700);    
   margin: 0 30px;
@@ -397,12 +392,17 @@ background: #BDFFF7;
       align-items: center;
       text-align: justify;
     }
-
-    .btn-cambiar-img{
-      
-      
-    }
+  
 }
 
 
 
+.btn-cambiar-img
+{
+  width: 100px;
+  font-family: u.$font-family-montserrat;
+  margin: 0 10% 0 0;
+  border-radius: 5px;
+  background-color: #BDFFF7; 
+  border: none; 
+}

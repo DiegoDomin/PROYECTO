@@ -132,17 +132,15 @@ const handleButtonClick = () => {
           <li className="p-form-text">
             No se aceptarán fotografías borrosas, manchadas o alteradas
           </li>
-          <li className="p-form-text">
-            La imagen debe ser en formato de archivo JPEG,JPG
-          </li>
+        
         </ul>
       </section>
 
       <div className="container-upload-image">
       <label className="upload-label" onClick={handleButtonClick}>
-        {/* Contenido del label, como una vista previa de la imagen */}
+      
         <img src={pathImage} className="fotografia" alt="Vista previa" />
-        {/* Agrega aquí cualquier otro contenido que desees */}
+     
       </label>
 
       <div className="src-file1">
