@@ -1,7 +1,9 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import Label from "../../label/Label";
 import { Validation } from "../../../assets/Validation/validaciones/Validation";
 import { useLocalStorage } from "../../../assets/Validation/validaciones/useLocalStorage";
+
 function Datos_personales() {
   //se configura los valores iniciales
   const initialForm = {
@@ -13,13 +15,48 @@ function Datos_personales() {
 
 
  // Usando el hook useLocalStorage
- const [storedForm] = useLocalStorage("CrearCuenta", initialForm);
+const [storedForm, setStoredForm] = useLocalStorage("CrearCuenta", initialForm);
  // Uso del componente Validation con el hook useLocalStorage
- const { form, errors, handleChange, handleBlur } = Validation(
+const { form, errors, handleChange, handleBlur } = Validation(
   
    storedForm,
    "CrearCuenta"
  );
+
+// DUI Validation State
+const [dui, setDUI] = useState('');
+const [duiResult, setDUIResult] = useState(null);
+
+// DUI Validation Effect
+useEffect(() => {
+  const validarDUI = () => {
+    const regex = /(^\d{8})-(\d$)/;
+    const parts = dui.match(regex);
+
+    if (parts !== null) {
+      const digits = parts[1];
+      const digVe = parseInt(parts[2], 10);
+      let sum = 0;
+
+      for (let i = 0, l = digits.length; i < l; i++) {
+        const d = parseInt(digits[i], 10);
+        sum += (9 - i) * d;
+      }
+
+      const esValido = digVe === (10 - (sum % 10)) % 10;
+      setDUIResult(esValido);
+    } else {
+      setDUIResult(null);
+    }
+  };
+
+  validarDUI();
+}, [dui]);
+
+
+const handleStorageChange = () => {
+  setStoredForm(form);
+};
 
 
   return (
@@ -67,24 +104,30 @@ function Datos_personales() {
           {errors.date && <p className="p-text-form-error">{errors.date}</p>}
 
         {/* dui */}
-        <Label text_label={"DUI"} htmlFor={"dui"}/>
+        <Label text_label={'DUI'} htmlFor={'dui'} />
+      <input
+        type="text"
+        name="dui"
+        placeholder="Ej. 06667522-0"
+        onChange={(e) => {
+          handleChange(e);
+          setDUI(e.target.value); // Update DUI state for validation
+        }}
+        onBlur={(e) => {
+          handleBlur(e);
+          handleStorageChange();
+        }}
+        value={form.dui}
+        required
+        id="dui"
+      />
+      {errors.dui && <p className="p-text-form-error">{errors.dui}</p>}
+      {duiResult !== null && <p>{duiResult ? 'DUI válido' : 'DUI no válido'}</p>}
 
-        <input
-          type="text"
-          name="dui"
-          placeholder="Ej. 06667522-0"
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={form.dui}
-          required
-          id="dui"
-        />
-        {errors.dui && <p className="p-text-form-error">{errors.dui}</p>}
-  {/* btn-atras */}
-  <NavLink to="/iniciar-sesion" className="question-account">
-        ¿Ya tienes cuenta?Inicia sesión aca
+      {/* Botón Atrás */}
+      <NavLink to="/iniciar-sesion" className="question-account">
+        ¿Ya tienes cuenta? Inicia sesión aquí
       </NavLink>
-
 
 
       </div>
