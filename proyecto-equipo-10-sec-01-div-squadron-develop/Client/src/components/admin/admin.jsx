@@ -1,7 +1,7 @@
 import Table from "../Table/Table";
 import HeaderAD from "../header-admin/Header-admin";
 import icon_PDF from "../../assets/icons/icon-PDF.png"
-import { getAllForm } from "../../services/form.service";
+import { getAllForm,deleteFormById } from "../../services/form.service";
 import { generatorPDF } from "../../services/form.service";
 import { useEffect, useState } from "react";
 function ReportarCaso() {
@@ -9,7 +9,36 @@ function ReportarCaso() {
 
   const [approvedData, setApprovedData] = useState([]);
 
+  const handleApprove = async (id) => {
+    try {
+      if (!id) {
+        console.error("ID no válido:", id);
+        return;
+      }
   
+      // Aquí debes llamar a la función que realiza la aprobación
+      // Por ejemplo, podrías tener una función llamada approveFormById en tu servicio.
+      // await approveFormById(id);
+  
+      // Actualizar los datos después de aprobar
+      setApprovedData((prevData) => {
+        const approvedForm = formData.find((form) => form._id === id);
+        return [...prevData, approvedForm];
+      });
+  
+      // Eliminar el formulario de la lista de pendientes
+      setFormData((prevData) => prevData.filter((form) => form._id !== id));
+  
+      // Mostrar automáticamente el formulario aprobado
+      // (Puedes ajustar cómo manejas esto según tu estructura y lógica de presentación)
+      console.log("Mostrar formulario aprobado:", approvedForm);
+    } catch (error) {
+      console.error("Error al aprobar el formulario:", error);
+      // Puedes mostrar un mensaje de error al usuario si lo prefieres
+    }
+  };
+  
+
   const downloadPDF = async (id) => {
     try {
       const pdfData = await generatorPDF(id);
@@ -28,6 +57,26 @@ function ReportarCaso() {
     }
   };
   
+  const handleDelete = async (id) => {
+    try {
+      if (!id) {
+        console.error("ID no válido:", id);
+        return;
+      }
+  
+      // Llamar a la función para eliminar el formulario por ID
+      await deleteFormById(id);
+  
+      // Actualizar los datos después de eliminar
+      setFormData((prevData) => prevData.filter((form) => form._id !== id));
+    } catch (error) {
+      console.error("Error al eliminar el formulario:", error);
+      // Puedes mostrar un mensaje de error al usuario si lo prefieres
+    }
+  };
+  
+
+
   const columnsP = [
     //aca van los encabezados
     
@@ -37,8 +86,10 @@ function ReportarCaso() {
         <img
           src={icon_PDF}
           alt="Descargar PDF"
-          className="icon-descargar-pdf"
+          className="icon-PDF"
           onClick={() => downloadPDF(row.original._id)}
+          style={{ width: '40px', height: '40px',justifyContent:"center",margin:"0 0 0 20%",cursor:"pointer" }} // Ajusta el tamaño según tus preferencias
+
         />
       ),
     },
@@ -61,7 +112,7 @@ function ReportarCaso() {
       accessorKey: "last_name",
     },
     {
-      header: "Edad",
+      header: "Fecha de nacimiento",
       //lee los valores de cada objeto
       accessorKey: "fecha_nacimiento",
     },
@@ -72,10 +123,11 @@ function ReportarCaso() {
     },
     {
       header:"Acciones",
-      cell:((val)=>
+      cell:((row)=>
       <>
-<button onClick={() => handleApprove(val)}>Aprobar</button>
-          <button >Eliminar</button></>
+  <button onClick={() => handleApprove(row.original._id)}>Aprobar</button>
+      <button onClick={() => handleDelete(row.original._id)}>Eliminar</button>          
+          </>
       )
     }
     // {
@@ -129,16 +181,16 @@ function ReportarCaso() {
     const fetchData = async () => {
       try {
         const data = await getAllForm();
+        console.log('Datos obtenidos:', data);
         setFormData(data);
       } catch (error) {
         console.error("Error al obtener los datos:", error);
       }
     };
-
+  
     fetchData();
   }, []);
-
-
+  
 
  
 

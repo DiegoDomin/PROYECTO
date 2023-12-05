@@ -25,9 +25,12 @@ import Reportes from "./components/admin/admin";
 import Administrador from "./pages/Administrador/Administrador";
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
+      
         <Routes>
         {/* Visitante */}
           <Route path="/" element={<Inicio />} />
@@ -37,15 +40,23 @@ function App() {
 
 
           {/* registrado */}
-          <Route path="/inicio-usuario" element={<Inicio_usuario_registrado />} />
+        
+
+
+<>
+            <Route path="/inicio-usuario" element={<Inicio_usuario_registrado />} />
           <Route path="/instructivo-usuario" element={<Instructivo_usuario_registrado />} />
           <Route path="/preguntas-frecuentes-usuario" element={<PQ_usuario_registrado />} />
           <Route path="/quienes-somos-usuario" element={<QS_usuario_registrado />} />
           <Route path="/reportar-caso-usuario" element={<Reportar_caso/>} />
           <Route path="/reportar-caso-usuario-form" element={<Form_reportar/>} />
           <Route path="/reportar-caso-usuario-form-editar" element={<EditarFormulario />} />
-          {/* cuenta */}
+          </>
+        
+   
           
+
+          {/* cuenta */}
           <Route path="/crear-cuenta" element={<Crearcuenta />} />
           <Route path="/iniciar-sesion" element={<Iniciarsesion />} />
 
@@ -53,6 +64,10 @@ function App() {
           {/* reportes */}
           <Route path="/admin/vista" element={<Reportes />} />
           <Route path="/administrador" element={<Administrador/>}/>
+
+
+{/* RUTAS PROTEGIDAS */}
+
 
 
         </Routes>

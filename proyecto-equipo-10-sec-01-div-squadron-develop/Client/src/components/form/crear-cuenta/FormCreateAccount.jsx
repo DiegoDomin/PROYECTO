@@ -53,13 +53,20 @@ const handleSubmit = async (e) => {
   };
   return (
     <div>
-    <form onSubmit={handleSubmit}>
-      <CorreoContraseña />
-      <DatosPersonales />
-      <InformacionExtra />
+    <form onSubmit={handleSubmit} className='container-form-crear-cuenta'>
 
+    <div className='container-corre-contra'>
+      <CorreoContraseña />
+      </div>
+
+      <div className='container-datos-personales'>
+      <DatosPersonales />
+      </div>
+      <div className='container-informacion-extra'>
+      <InformacionExtra />
+</div>
       {/* Botón para enviar el formulario */}
-      <button type='submit'>Enviar Formulario</button>
+      <button type='submit' className='btn-next'>Enviar Formulario</button>
       </form>
     </div>
   );
