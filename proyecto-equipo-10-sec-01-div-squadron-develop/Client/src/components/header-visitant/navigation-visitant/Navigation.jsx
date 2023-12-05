@@ -43,7 +43,7 @@ function Navigation() {
            
 
               <li className="container-icon-perfil-hamburguer">
-              <img src={perfilFoto} alt="icon-cerrar" className="icon-perfil-hamburguer"/><NavLink to="/crear-cuenta" className="text-nav-perfil">Crear cuenta </NavLink> 
+              <img src={perfilFoto} alt="icon-cerrar" className="icon-perfil-hamburguer"/><NavLink to="/crear-cuenta" className="text-nav-perfil">Crear cuenta</NavLink> 
               </li>
               <NavLink to="/" className="text-nav" onClick={closeMenu}>
                 INICIO

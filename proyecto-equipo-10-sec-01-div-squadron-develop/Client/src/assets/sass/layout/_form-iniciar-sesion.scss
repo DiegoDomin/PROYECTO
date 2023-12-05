@@ -17,3 +17,33 @@
   outline: none;
 }
 
+.input-form-inicio-sesion{
+  margin: 0 -30%;
+
+}
+.input-form-inicio-sesion input{
+  width: 80%;
+}
+
+
+@include u.maxphone{
+  .input-form-inicio-sesion{
+    margin: 0 0;
+  
+  }
+  .input-form-inicio-sesion input{
+    width: 90%;
+  }
+  
+}
+
+@include u.min_maxTablet{
+  .input-form-inicio-sesion{
+    margin: 0 0;
+  
+  }
+  .input-form-inicio-sesion input{
+    width: 90%;
+  }
+   
+}

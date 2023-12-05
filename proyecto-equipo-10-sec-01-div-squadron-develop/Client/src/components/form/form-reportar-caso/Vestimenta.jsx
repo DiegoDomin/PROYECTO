@@ -3,7 +3,7 @@ import { Validation } from "../../../assets/Validation/validaciones/Validation"
 import { useLocalStorage } from "../../../assets/Validation/validaciones/useLocalStorage";
 function Vestimenta(){
   const initialForm = {
-    infoVestimenta: "",
+    vestimenta: "",
   };
 
 
@@ -22,16 +22,16 @@ return(
 
        <Label  text_label={"Vestimenta"} htmlFor={"vestimenta"}/>
      <textarea placeholder="Ej. Camisa manga larga color roja, pantalon jeans azules, zapatos color blancos marca adidas" className="txtArea-form"
-     name="infoVestimenta"
+     name="vestimenta"
          onChange={handleChange}
           onBlur={handleBlur}
-          value={form.infoVestimenta}
+          value={form.vestimenta}
           required
           id="vestimenta"
           >
          
      </textarea>
-     {errors.infoVestimenta && <p className="p-text-form-error">{errors.infoVestimenta}</p>}
+     {errors.vestimenta && <p className="p-text-form-error">{errors.vestimenta  }</p>}
 
 </div>
 

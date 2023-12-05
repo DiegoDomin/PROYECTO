@@ -3,11 +3,11 @@
   import { useLocalStorage } from "../../../assets/Validation/validaciones/useLocalStorage";
   function Caracteristicas_fisicas_usuario_registrado() {
     const initialForm = {
-      colorCabello: "",
+      color_ca: "",
       tez: "",
-      colorOjos: "",
-      altura: "",
-      rostro: "",
+      color_ey: "",
+      height: "",
+      forma_rostro: "",
     };
 
 
@@ -30,16 +30,16 @@
 
         <input
           type="text"
-          name="colorCabello"
+          name="color_ca"
           placeholder="Ej.cabello color cafe"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.colorCabello}
+          value={form.color_ca}
           required
-          id="colorCabello"
+          id="color_ca"
         />
-        {errors.colorCabello && 
-          <p className="p-text-form-error">{errors.colorCabello}</p>
+        {errors.color_ca && 
+          <p className="p-text-form-error">{errors.color_ca}</p>
         }
 
         {/* Tez */}
@@ -58,46 +58,46 @@
         {errors.tez && <p className="p-text-form-error">{errors.tez}</p>}
 
         {/* color de ojos*/}
-        <Label text_label={"Color de ojos"} htmlFor={"colorOjos"} />
+        <Label text_label={"Color de ojos"} htmlFor={"color_ey"} />
         <input
           type="text"
-          name="colorOjos"
+          name="color_ey"
           placeholder="Ej. Color azules claros"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.colorOjos}
+          value={form.color_ey}
           required
-          id="colorOjos"
+          id="color_ey"
         />
-        {errors.colorOjos && 
-          <p className="p-text-form-error">{errors.colorOjos}</p>
+        {errors.color_ey && 
+          <p className="p-text-form-error">{errors.color_ey}</p>
         }
-        {/* altura */}
-        <Label text_label={"Altura"} htmlFor={"altura"} />
+        {/* height */}
+        <Label text_label={"Altura"} htmlFor={"height"} />
         <input
           type="text"
-          name="altura"
+          name="height"
           placeholder="Ej. 1.80 m"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.altura}
-          id="altura"
+          value={form.height}
+          id="height"
           required
         />
-        {errors.altura && <p className="p-text-form-error">{errors.altura}</p>}
-        {/* Forma del rostro */}
-        <Label text_label={"Forma de rostro"} htmlFor={"rostro"} />
+        {errors.height && <p className="p-text-form-error">{errors.height}</p>}
+        {/* Forma del forma_rostro */}
+        <Label text_label={"Forma de forma_rostro"} htmlFor={"forma_rostro"} />
         <input
           type="text"
-          name="rostro"
+          name="forma_rostro"
           placeholder="Ej.  Cara alargada o triangulo invertido, parte superior ancha (frente, pómulos) y mandíbula estrecha."
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.rostro}
-          id="rostro"
+          value={form.forma_rostro}
+          id="forma_rostro"
           required
         />
-        {errors.rostro && <p className="p-text-form-error">{errors.rostro}</p>}
+        {errors.forma_rostro && <p className="p-text-form-error">{errors.forma_rostro}</p>}
 
       </div>
     );

@@ -5,7 +5,7 @@ function Discapacidad() {
 
      const initialForm = {
           discapacidad: "",
-          descDiscapacidad: "",
+          descrip_discapa: "",
         };
       
      
@@ -37,18 +37,18 @@ function Discapacidad() {
               {errors.discapacidad && <p className="p-text-form-error">{errors.discapacidad}</p>}
 
       {/* describa discapacidad */}
-      <Label text_label={"Describa la discapacidad (omitir si no lo tiene)" } htmlFor={"descDiscapacidad"} />
+      <Label text_label={"Describa la discapacidad (omitir si no lo tiene)" } htmlFor={"descrip_discapa"} />
       <textarea
         placeholder="Problemas de la vista en el ojo derecho"
         className="txtArea-form"
-        name="descDiscapacidad"
+        name="descrip_discapa"
         onChange={handleChange}
           onBlur={handleBlur}
-          value={form.descDiscapacidad}
+          value={form.descrip_discapa}
           required
           id="desDiscapacidad"
       ></textarea>
-              {errors.descDiscapacidad && <p className="p-text-form-error">{errors.descDiscapacidad}</p>}
+              {errors.descrip_discapa && <p className="p-text-form-error">{errors.descrip_discapa}</p>}
 
     </div>
   );

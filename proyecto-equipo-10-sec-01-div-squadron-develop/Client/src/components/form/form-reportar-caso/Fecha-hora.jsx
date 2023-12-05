@@ -3,8 +3,8 @@ import { Validation } from "../../../assets/Validation/validaciones/Validation";
 import { useLocalStorage } from "../../../assets/Validation/validaciones/useLocalStorage";
 function Fecha_hora() {
   const initialForm = {
-    hora: "",
-    fecha: "",
+    time: "",
+    date_desa: "",
   };
 
 
@@ -28,27 +28,27 @@ function Fecha_hora() {
       />
       <input
         type="time"
-        name="hora"
+        name="time"
         onChange={handleChange}
         onBlur={handleBlur}
-        value={form.hora}
+        value={form.time}
         required
         id="hora"
       />
-                    {errors.hora && <p className="p-text-form-error">{errors.hora}</p>}
+                    {errors.time && <p className="p-text-form-error">{errors.time}</p>}
 
       {/* describa discapacidad */}
       <Label text_label={"Fecha de la desaparicion"} htmlFor={"fecha"}/>
       <input
         type="date"
-        name="fecha"
+        name="date_desa"
         onChange={handleChange}
         onBlur={handleBlur}
-        value={form.fecha}
+        value={form.date_desa}
         required
         id="fecha"
       />
-                    {errors.fecha && <p className="p-text-form-error">{errors.fecha}</p>}
+                    {errors.date_desa && <p className="p-text-form-error">{errors.date_desa}</p>}
 
     </div>
   );
