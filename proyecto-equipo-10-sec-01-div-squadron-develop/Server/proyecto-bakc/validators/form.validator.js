@@ -16,7 +16,6 @@ validators.createFormValidator = [
   body("fecha_nacimiento")
     .notEmpty()
     .withMessage("El campo Fecha de nacimiento es requerido"),
-  body("gender").notEmpty().withMessage("El campo genero es requerido"),
   body("color_ca")
     .notEmpty()
     .withMessage("El campo color de cabello es requerido")
@@ -27,10 +26,10 @@ validators.createFormValidator = [
     .notEmpty()
     .withMessage("El campo color de ojos es requerido")
     .isLength({ min: 4, max: 20 }),
-  body("discapacidad")
-    .notEmpty()
-    .withMessage("El campo discapacidad es requerido")
-    .isLength({ min: 4, max: 30 }),
+  // body("discapacidad")
+  //   .notEmpty()
+  //   .withMessage("El campo discapacidad es requerido")
+  //   .isLength({ min: 4, max: 30 }),
   body("descrip_discapa")
     .notEmpty()
     .withMessage("El campo Describir discapacidad es requerido")
@@ -48,9 +47,9 @@ validators.createFormValidator = [
     .notEmpty()
     .withMessage("El campo fecha de desaparicion es requerido"),
 
-  body("coordenadas").notEmpty().withMessage("Por favor seleccione el lugar"),
+  // body("coordenadas").notEmpty().withMessage("Por favor seleccione el lugar"),
 
-  body("image").isURL().withMessage("SUBA UNA IMAGEN"),
+  // body("image").isURL().withMessage("SUBA UNA IMAGEN"),
 ];
 
 validators.idInParamsValidator = [

@@ -432,11 +432,11 @@
 
 //----------------------------------TELEFONO-------------
 @include u.maxphone{
+
   .container-mapa {
     background: #131217;
     display: flex;
-      z-index: -1;
-      
+    
     flex-direction: column;
     align-items: center;
     width: 140%;
@@ -444,7 +444,7 @@
     flex-wrap: wrap;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
-    margin: 1% 7% 1% 0 ;
+    margin: 1% 0 0 0 ;
     margin-left:5%;
     top:10px;
 
@@ -471,12 +471,11 @@
   /* Estilos para la barra de búsqueda */
   .form-mapa {
     display: flex;
-    width: 20%;
+    width: 50%;
     flex-direction: column;
     position: absolute;
     z-index: 100;
-    
-    margin: 15% 0 0 15%;
+    margin: 35% 0 0 5%;
     @include u.text(u.$font-family-montserrat, 1rem);
     margin-bottom: 10px;
   }
@@ -554,7 +553,6 @@
   //position: sticky; /* Asegura que el contenedor del filtro sea fijo en la pantalla */
   top: 30%; /* Ajusta según sea necesario para centrar verticalmente */
   left: 0;
-  
   background-color: #f2f2f2;
   padding: 20px;
   min-width: 200px;
@@ -566,8 +564,7 @@
 }
 
 .mapContainer {
-  position: absolute;
-  
+  position: relative;
   flex: 1;
 }
 
@@ -579,27 +576,29 @@
 
 #filter-form {
   display: flex;
-  flex-direction: column;
   position: absolute;
 
+  flex-direction: row;
   align-items: center;
-  width: 50%; /* Ajusta el ancho para pantallas más pequeñas */
+  width: auto; /* Ajusta el ancho para pantallas más pequeñas */
   padding: 40px 20px; /* Ajusta los espaciados para pantallas más pequeñas */
-  height: 30%;
-  bottom: 0;
+  height: auto;
+  top: 0;
   background: #ffffff; /* Cambié el fondo para que coincida con el filtroContainer */
   box-shadow: 0px 0px 5px 7px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   color: black;
   @include u.text(u.$font-family-montserrat, 1rem);
   z-index: 200;
-  
+  margin:100% 0 auto 30%;
   .genero-options,
   .edad-options {
     display: flex;
+    padding: 0 40px 0 0;
+    text-align: center;
+    font-size: 12px;
+    justify-content: center;
     flex-direction: column;
-    margin-top: 10px;
-
     .toggleButton {
       cursor: pointer;
     }
@@ -609,8 +608,11 @@
     }
   }
 
+  .button-filtro{
+    display: none;
+  }
+
   button {
-    margin-top: 3%;
     cursor: pointer;
     background-color: #131217;
     color: #ffffff;
@@ -620,7 +622,13 @@
   }
 }
 
+.title-filtros{
+  display: none;
+}
 
+.button-busqueda{
+  display: none;
+}
 // Estilos para el contenedor del mapa y resultados de búsqueda
 .container-mapa {
   display: flex;
@@ -636,13 +644,21 @@
   // Estilos para el formulario de búsqueda y resultados de búsqueda
 .form-mapa,
 #search-results {
-  margin-bottom: 20px;
+  margin-bottom: '';
 }
 
 
 .genero-options input{
-  padding: 10px;
+  padding: 0 20px;
+
+  font-size: 12px;
+
 }
+}
+
+.genero-options label{
+  font-size: 12px;
+  padding: 0 0;
 }
 
 }

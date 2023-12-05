@@ -6,14 +6,13 @@ import icon_eye_password from "../../../assets/icons/icon-eye-password.png"
 import icon_close_password from "../../../assets/icons/icon-close-password.png"
 function Correo_contraseña() {
   const initialForm = {
-    correoElectronico: "",
-    contrasena: "",
-    contrasena2: "",
-
+  
+    correo_u: '',
+    password: '',
   };
 
-  const [showPass, setShowPass] =useState(false);
-  const [showPass2, setShowPass2] =useState(false);
+  const [showPass, setShowPass] =useState(false); 
+  
 
  // Usando el hook useLocalStorage
  const [storedForm] = useLocalStorage("CrearCuenta", initialForm);
@@ -34,48 +33,33 @@ function Correo_contraseña() {
 
         <input
           type="email"
-          name="correoElectronico"
+          name="correo_u"
           placeholder="Ej. usuario1@gmai.com"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.correoElectronico}
+          value={form.correo_u}
           required
           id="correoElectronico"
         />
-        {errors.correo && (
-          <p className="p-text-form-error">{errors.correo}</p>
+        {errors.correo_u && (
+          <p className="p-text-form-error">{errors.correo_u}</p>
         )}
 
         <Label text_label={"Contraseña"} htmlFor={"contrasena"} />
         <section className="container-password">
-      <input type={showPass ?"text":"password"} name="contrasena" placeholder="Ej. Usu@r1o12." id="contrasena"  onChange={handleChange}
+      <input type={showPass ?"text":"password"} name="password" placeholder="Ej. Usu@r1o12." id="contrasena"  onChange={handleChange}
           onBlur={handleBlur}
-          value={form.contrasena}
+          value={form.password}
           required
         
           />
       {showPass ? <img src={icon_close_password} className="icon-eye-password" onClick={()=>setShowPass(!showPass)}/>:<img src={icon_eye_password} className="icon-eye-password" onClick={()=>setShowPass(!showPass)}/> }
 </section>
         
- {errors.contrasena && (
-          <p className="p-text-form-error">{errors.contrasena}</p>
+ {errors.password && (
+          <p className="p-text-form-error">{errors.password}</p>
         )}
-        
-        <Label text_label={"Confirmar contraseña"} htmlFor={"contrasena2"} />
-
-        <section className="container-password">
-      <input type={showPass2 ?"text":"password"} name="contrasena2" placeholder="Ej. Usu@r1o12." id="contrasena2"  onChange={handleChange}
-          onBlur={handleBlur}
-          value={form.contrasena2}
-          required
-        
-          />
-      {showPass2 ? <img src={icon_close_password} className="icon-eye-password" onClick={()=>setShowPass2(!showPass2)}/>:<img src={icon_eye_password} className="icon-eye-password" onClick={()=>setShowPass2(!showPass2)}/> }
-</section>
-
- {errors.contrasena2 && (
-          <p className="p-text-form-error">{errors.contrasena2}</p>
-        )}
+      
         
       </div>
   );

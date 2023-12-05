@@ -55,7 +55,7 @@ const DisapperSchema = Schema(
       required: true,
     },
     condicion:{
-        type:Boolean,
+        type:String,
         required:true
     }
 ,
@@ -64,7 +64,6 @@ const DisapperSchema = Schema(
         required:true
       
         },
-
     forma_rostro: {
       type: String,
       required: true,
@@ -94,12 +93,12 @@ const DisapperSchema = Schema(
       required: true,
     },
     coordenadas: {
-      longitud: {
+      lon: {
         type: Number,
         min: -200.000001,
         max: 90,
       },
-      latitud: {
+      lat: {
         type: Number,
         min: -200.000001,
         max: 90,

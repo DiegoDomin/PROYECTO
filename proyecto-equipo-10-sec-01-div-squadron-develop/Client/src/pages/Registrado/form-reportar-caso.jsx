@@ -13,7 +13,7 @@ import icon_P_report_wizard from "../../assets/icons/icon-reporte-form.png";
 import icon_ULV_report_wizard from  "../../assets/icons/icon-ULV-wizard.png";
 import fondo_form3 from "../../assets/img/fondo-form3.jpg";
 import Fotografia_usuario_registrado from "../../components/form/form-reportar-caso/Fotografia";
-
+import FormularioReporte from "../../components/form/form-reportar-caso/FormReport";
 import Wizard from "../../components/wizard/wizard";
 import Header_usuario_registrado from "../../components/header-usuario-registrado/Header";
 
@@ -26,7 +26,7 @@ function Form_reportar() {
     "Fecha y hora",
     "Lugar visto por ultima vez",
     "Fotografia",
-
+    "Envio de datos"
   ];
   return (
     <>
@@ -41,6 +41,7 @@ function Form_reportar() {
       PAGES5={<Fecha_hora />}
       PAGES6={<Ultimo_lugar />}
       PAGES7={<Fotografia_usuario_registrado />}
+      PAGES8={<FormularioReporte />}
       des1={"Ingrese los datos personales de la persona desaparecida"}
       des2={"Ingrese las caracteristicas fisicas de la persona desaparecida, usando un correcto lenguaje, respentando los espacios"}
       des3={"Indique las discapacidades que posea, en caso de no poseer omita este paso"}

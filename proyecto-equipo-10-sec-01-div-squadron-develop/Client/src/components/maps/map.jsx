@@ -189,7 +189,7 @@ const Map = () => {
   return (
     <div className='map-container'>
       <div id='filter-form'>
-      <label>FILTROS</label>
+      <label className='title-filtros'>FILTROS</label>
       <p>
 
       </p>
@@ -272,7 +272,7 @@ const Map = () => {
             )}
           </div>
         </label>
-        <button type='button-busqueda' onClick={handleFilterSubmit}>
+        <button type='button-busqueda' onClick={handleFilterSubmit} className='button-filtro'>
           Aplicar Filtros
         </button>
 

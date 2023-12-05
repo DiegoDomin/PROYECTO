@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "../button/Button";
 import PageDisplay from "../displayPage/Displaypage";
 import check from "../../assets/icons/icon-check-wizard.png";
-import { Validation } from "../../assets/Validation/validaciones/Validation";
 function Wizard({
   steps,
   img1,
@@ -19,6 +18,7 @@ function Wizard({
   PAGES5,
   PAGES6,
   PAGES7,
+  PAGES8,
   title,
   photo,
   descripcion,
@@ -29,13 +29,13 @@ function Wizard({
   des5,
   des6,
   des7,
+  des8,
   backgroundImage,
   lugarOpcion,
   opcion,
 }) {
   const [complete, setComplete] = useState(false);
   const [pages, setPages] = useState(1);
-  const { handleSubmit } = Validation();
 
   const handlePageChange = (newPage) => {
     setPages(newPage);
@@ -77,7 +77,7 @@ function Wizard({
       {/* FORMULARIO  */}
       {/* <form className="form-crear-cuenta" onSubmit={handleSubmit}> */}
 
-      <form className="form-crear-cuenta" onSubmit={handleSubmit} method="post">
+      <div className="form-crear-cuenta" >
         <div className="container-form-general">
           <div
             className="container-text-Description"
@@ -99,7 +99,8 @@ function Wizard({
                     (pages === 4 ? des4 : descripcion) ||
                     (pages === 5 ? des5 : descripcion) ||
                     (pages === 6 ? des6 : descripcion) ||
-                    (pages === 7 ? des7 : descripcion)}
+                    (pages === 7 ? des7 : descripcion) ||
+                    (pages === 8 ?des8 :descripcion)} 
                 </p>
               </div>
             </div>
@@ -115,7 +116,8 @@ function Wizard({
                 (pages === 4 ? PAGES4 : Paginas) ||
                 (pages === 5 ? PAGES5 : Paginas) ||
                 (pages === 6 ? PAGES6 : Paginas) ||
-                (pages === 7 ? PAGES7 : Paginas)
+                (pages === 7 ? PAGES7 : Paginas) ||
+                (pages === 8 ?PAGES8 :Paginas)
               }
             />
 
@@ -130,7 +132,7 @@ function Wizard({
             />
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }

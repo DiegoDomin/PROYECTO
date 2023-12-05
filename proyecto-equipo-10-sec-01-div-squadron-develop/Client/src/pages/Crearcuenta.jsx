@@ -6,10 +6,11 @@ import icon_DP_wizard from "../assets/icons/icon-DP-wizard.png";
 import fotoCreateAccount from "../assets/img/create-account.png";
 import icon_DP_report_wizard from "../assets/icons/icon-DP-report-wizard.png";
 import fondo_form from "../assets/img/fondo-form.jpg";
+import FormularioRegistro from "../components/form/crear-cuenta/FormCreateAccount";
 import Informacion_extra from "../components/form/crear-cuenta/Informacion-extra";
 import Correo_contraseña from "../components/form/crear-cuenta/Correo-contraseña";
 function Crearcuenta() {
-  const steps = ["Datos Personales","Información Extra", "Correo y Contraseña"];
+  const steps = ["Datos Personales","Información Extra", "Correo y Contraseña","enviar datos"];
   return (
     <>
       <Header />
@@ -28,6 +29,7 @@ function Crearcuenta() {
         PAGES1={<Datos_personales /> } 
         PAGES2={<Informacion_extra />}
         PAGES3={<Correo_contraseña />}
+        PAGES4={<FormularioRegistro />}
         lugarOpcion={"/reportar-caso-usuario"}
         opcion={"Registrarse"}
       />

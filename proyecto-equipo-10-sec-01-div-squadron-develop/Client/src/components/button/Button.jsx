@@ -8,7 +8,6 @@ export const Button = ({
   pages,
   setPages,
   setComplete,
-  opcion,
   lugarOpcion,
 }) => {
   const {clearForm}=Validation()
@@ -45,9 +44,7 @@ export const Button = ({
       {pages < steps.length ? (
         <button onClick={handleNextClick} className="btn-next" type='button'>Siguiente</button>
       ) : null}
-      {pages === steps.length ? (
-        <button onClick={handleNextClick} className="btn-next" type='button'>{opcion}</button>
-      ) : null}
+      
    
     </div>
   );

@@ -6,11 +6,13 @@ import { Validation } from "../../../assets/Validation/validaciones/Validation";
 import { useLocalStorage } from "../../../assets/Validation/validaciones/useLocalStorage";
 function Informacion_extra() {
   const initialForm = {
-    direccion: "",
-    telefono: "",
-    telefonoEmergencia: "",
-    genero: "",
+    direccion_u: '',
+    numero_tel_u: '',
+    numero_tel_emer_u: '',
+    genero_u: '',
   };
+
+
   // Usando el hook useLocalStorage
   const [storedForm] = useLocalStorage("CrearCuenta", initialForm);
 
@@ -31,32 +33,32 @@ function Informacion_extra() {
 
         <input
           type="text"
-          name="direccion"
+          name="direccion_u"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.direccion}
+          value={form.direccion_u}
           placeholder="Ej. lomas de san francisco, calle circunvalacion"
           required
           id="direccion"
         />
-        {errors.direccion && (
-          <p className="p-text-form-error">{errors.direccion}</p>
+        {errors.direccion_u && (
+          <p className="p-text-form-error">{errors.direccion_u}</p>
         )}
 
         {/* numero de telefono  */}
         <Label text_label={"Numero de telefono"} htmlFor={"telefono"} />
         <input
           type="tel"
-          name="telefono"
+          name="numero_tel_u"
           placeholder="Ej. 7424-9842"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.telefono}
+          value={form.numero_tel_u}
           required
           id="telefono"
         />
-        {errors.telefono && (
-          <p className="p-text-form-error">{errors.telefono}</p>
+        {errors.numero_tel_u && (
+          <p className="p-text-form-error">{errors.numero_tel_u}</p>
         )}
 
         {/* numero telefono EMERGENCIA  */}
@@ -66,16 +68,16 @@ function Informacion_extra() {
         />
         <input
           type="tel"
-          name="telefonoEmergencia"
+          name="numero_tel_emer_u"
           placeholder="Ej. 1234-5678"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={form.telefonoEmergencia}
+          value={form.numero_tel_emer_u}
           required
           id="telefonoEmergencia"
         />
-        {errors.telefonoEmergencia && (
-          <p className="p-text-form-error">{errors.telefonoEmergencia}</p>
+        {errors.numero_tel_emer_u && (
+          <p className="p-text-form-error">{errors.numero_tel_emer_u}</p>
         )}
 
         {/* Genero          */}
@@ -87,11 +89,11 @@ function Informacion_extra() {
           <div className="input-container">
             <input
               type="radio"
-              name="genero"
+              name="genero_u"
               value="masculino"
               onChange={handleChange}
               onBlur={handleBlur}
-              checked={form.genero === 'masculino'} 
+              checked={form.genero_u === 'masculino'} 
 
               required
               id="masculino"
@@ -108,10 +110,10 @@ function Informacion_extra() {
           <div className="input-container">
             <input
               type="radio"
-              name="genero"
+              name="genero_u"
               id="femenino"
               value="femenino"
-              checked={form.genero === 'femenino'} 
+              checked={form.genero_u === 'femenino'} 
 
               className="rbtn-genero"
               onChange={handleChange}
@@ -129,10 +131,10 @@ function Informacion_extra() {
           <div className="input-container">
             <input
               type="radio"
-              name="genero"
+              name="genero_u"
               value="otro"
               className="rbtn-genero"
-              checked={form.genero === 'otro'} 
+              checked={form.genero_u === 'otro'} 
 
               onChange={handleChange}
               onBlur={handleBlur}
