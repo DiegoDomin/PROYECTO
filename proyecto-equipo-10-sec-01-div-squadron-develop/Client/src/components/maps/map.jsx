@@ -132,8 +132,10 @@ const Map = () => {
   const handleFilterSubmit = () => {
     // Datos de ejemplo: lista de personas con información de género y edad
     const personas = [
-      { nombre: 'Persona 1', genero: 'male', edad: 25, lat: 13.6673, lon: -88.9783 },
-      { nombre: 'Persona 2', genero: 'female', edad: 30, lat: 13.7000, lon: -88.9500 },
+      { nombre: 'Juan Perez', genero: 'male', edad: 25, lat: 13.6673, lon: -88.9783 },
+      { nombre: 'Susana Martinez', genero: 'female', edad: 30, lat: 13.7000, lon: -88.9500 },
+      { nombre: 'Alex Alvarez', genero: 'male', edad: 23, lat: 13.6673, lon: -88.9983 },
+      { nombre: 'Maria Torres', genero: 'female', edad: 18, lat: 13.533689, lon: -88.206482 }, 
       // Agrega más personas según sea necesario
     ];
 
