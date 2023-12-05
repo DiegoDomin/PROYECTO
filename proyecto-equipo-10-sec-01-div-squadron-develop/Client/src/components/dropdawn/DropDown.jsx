@@ -3,6 +3,7 @@ import icon_create_account from "../../assets/icons/icon-create-account.jpg"
 import icon_login from "../../assets/icons/icon-login.png"
 
 const DropDown=({link1,link2,nombre,nombre2})=>{
+    
     return(
         <div className="sub-menu-wrap">
             <div className="sub-menu">

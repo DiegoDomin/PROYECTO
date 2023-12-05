@@ -67,7 +67,9 @@ const handleSubmit = async (e) => {
   return (
     <div>
     <form onSubmit={handleSubmit}>
+    <div className='container-datos-personales-usuario-registrado'>
       <Datos_personales_usuario_registrado />
+      </div>
       <Caracteristicas_fisicas_usuario_registrado />
       <Discapacidad />
       <Fecha_hora/>
@@ -76,7 +78,7 @@ const handleSubmit = async (e) => {
       <Vestimenta />
 
       {/* Botón para enviar el formulario */}
-      <button type='submit'>Enviar Formulario</button>
+      <button type='submit' className='btn-next'>Enviar Formulario</button>
       </form>
     </div>
   );

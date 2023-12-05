@@ -41,8 +41,14 @@ const navigate=useNavigate()
     setStoredForm(initialForm);
 
     // Redireccionar a la página después del inicio de sesión
-    navigate("/reportar-caso-usuario");
+  // Verificar si el usuario es el admin y redireccionar en consecuencia
+  if (form.correo_u === "admin@gmail.com" && form.password === "Admin123.") {
+    // Redireccionar a la ruta de administrador
+    navigate("/admin/vista");
   } else {
+    // Redireccionar a la página después del inicio de sesión para usuarios normales
+    navigate("/reportar-caso-usuario");
+  }  } else {
     // Aquí puedes manejar el fallo del inicio de sesión
     console.log("Inicio de sesión fallido. Verifica las credenciales.");
   }
@@ -100,7 +106,7 @@ const navigate=useNavigate()
         ¿Aun no tienes cuenta?Crea una cuenta aca
       </NavLink>
 
-    <button type="submit">Iniciar sesion</button>
+    <button type="submit" className="btn-next">Iniciar sesion</button>
      </form>
 </div>
     )
